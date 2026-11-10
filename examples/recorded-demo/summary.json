@@ -1,0 +1,20 @@
+{
+  "synthetic": true,
+  "baseline": "6b17b730ccc441593eec53dfabb7ab1b8a85d0cbf504c22b859484e2441dea6c",
+  "edited": "c661dcb01ec03a1f3e50b492d2a9e671f94f9d94c17564b1ae2b67c10f4244eb",
+  "random": "83f5c64b47fe1e4e623c306a7b10d4207c235787c5aa60dbc4a92ecb21ac7faf",
+  "comparison": {
+    "mean_delta": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "paired_tasks": 10,
+    "failed_pairs": 0,
+    "retained": false,
+    "criterion": "at least 5 tasks; no failed pairs; upper clustered bootstrap CI < 0"
+  },
+  "rollback": "6b17b730ccc441593eec53dfabb7ab1b8a85d0cbf504c22b859484e2441dea6c",
+  "matched_generation_budget": 240,
+  "claim": "Infrastructure demonstration only, no evidence of LLM improvement."
+}

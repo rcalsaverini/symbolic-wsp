@@ -1,0 +1,1 @@
+{"backend":"tiny","split":"validation","dataset_seed":17,"tasks":10,"k":8,"seeds":[1,2,3],"penalty":0.001,"random_edit_seed":5}

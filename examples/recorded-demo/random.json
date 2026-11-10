@@ -1,0 +1,2949 @@
+{
+  "schema": 1,
+  "generation_config": {
+    "expressions": [
+      "x",
+      "0",
+      "1",
+      "2*x",
+      "x+1",
+      "x*x",
+      "x*x+1",
+      "sin(x)",
+      "cos(x)",
+      "exp(x)",
+      "1/(x*x+1)",
+      "x/(x*x+1)",
+      "sin(x)+x",
+      "sin(x*x)"
+    ],
+    "prompt_version": 1
+  },
+  "checkpoint": "83f5c64b47fe1e4e623c306a7b10d4207c235787c5aa60dbc4a92ecb21ac7faf",
+  "condition": "random",
+  "split": "validation",
+  "dataset_digest": "ab39d06c6d8add82fb8f37ab435f6c4382577a266784cfe3b8209b90c843af2b",
+  "k": 8,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "penalty": 0.001,
+  "model_evaluations": 240,
+  "elapsed_seconds": 0.036634814999843,
+  "agent_tokens": null,
+  "edit_discovery_cost": null,
+  "rows": [
+    {
+      "task": "0df4b0d79d8ca430f54ee3cce6e15461cc377b1442cc18634db78f67e368dad8",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 5.406630795932732,
+          "nmse": 32.09956599588133,
+          "complexity": 3,
+          "objective": 32.10256599588133,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 3.572271912389508,
+          "nmse": 21.20884194519853,
+          "complexity": 5,
+          "objective": 21.213841945198528,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.989032142077401,
+          "nmse": 29.620251972940384,
+          "complexity": 1,
+          "objective": 29.621251972940385,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 3.572271912389508,
+          "nmse": 21.20884194519853,
+          "complexity": 5,
+          "objective": 21.213841945198528,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.953805088382321,
+          "nmse": 11.599884982861584,
+          "complexity": 3,
+          "objective": 11.602884982861584,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 3.4732952407490223,
+          "nmse": 20.621210142086227,
+          "complexity": 3,
+          "objective": 20.624210142086227,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.306999040347102,
+          "nmse": 31.508044911047442,
+          "complexity": 7,
+          "objective": 31.515044911047443,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 3.4732952407490223,
+          "nmse": 20.621210142086227,
+          "complexity": 3,
+          "objective": 20.624210142086227,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 1.953805088382321,
+        "nmse": 11.599884982861584,
+        "complexity": 3,
+        "objective": 11.602884982861584,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 4.03697514637291,
+        "nmse": 1.545692500439296,
+        "complexity": 3,
+        "objective": 1.548692500439296,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "18952471ac5de6ff97ef98f994ad7defd25bebad115e210c046269122776354e",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 0.7976931859812502,
+          "nmse": 8.142396076015459,
+          "complexity": 3,
+          "objective": 8.145396076015459,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.5068603928230716,
+          "nmse": 5.173741165324733,
+          "complexity": 5,
+          "objective": 5.178741165324733,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.5676616292372062,
+          "nmse": 5.794365432268107,
+          "complexity": 1,
+          "objective": 5.795365432268107,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.5068603928230716,
+          "nmse": 5.173741165324733,
+          "complexity": 5,
+          "objective": 5.178741165324733,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 0.37851238368270285,
+          "nmse": 3.8636380525553844,
+          "complexity": 3,
+          "objective": 3.8666380525553845,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.5285927243178707,
+          "nmse": 5.395572382885214,
+          "complexity": 3,
+          "objective": 5.398572382885214,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.701248864303709,
+          "nmse": 7.1579475685166845,
+          "complexity": 7,
+          "objective": 7.164947568516684,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.5285927243178707,
+          "nmse": 5.395572382885214,
+          "complexity": 3,
+          "objective": 5.398572382885214,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 0.37851238368270285,
+        "nmse": 3.8636380525553844,
+        "complexity": 3,
+        "objective": 3.8666380525553845,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 5.632418497196099,
+        "nmse": 11.816351468537588,
+        "complexity": 3,
+        "objective": 11.819351468537588,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "3141958903ca4821956a0c39a613ea37b66514725ac9e4d4f556098658480e15",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 5.638536173225856,
+          "nmse": 3.9827265126745575,
+          "complexity": 3,
+          "objective": 3.9857265126745576,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 4.961951895418134,
+          "nmse": 3.504827629258873,
+          "complexity": 5,
+          "objective": 3.509827629258873,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 6.074990489406621,
+          "nmse": 4.291011876680636,
+          "complexity": 1,
+          "objective": 4.292011876680636,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 4.961951895418134,
+          "nmse": 3.504827629258873,
+          "complexity": 5,
+          "objective": 3.509827629258873,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 2.0837932140554014,
+          "nmse": 1.4718675602291549,
+          "complexity": 3,
+          "objective": 1.4748675602291548,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 4.898164233136305,
+          "nmse": 3.4597718193914644,
+          "complexity": 3,
+          "objective": 3.4627718193914645,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.7962211773913745,
+          "nmse": 4.094105818836198,
+          "complexity": 7,
+          "objective": 4.1011058188361975,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 4.898164233136305,
+          "nmse": 3.4597718193914644,
+          "complexity": 3,
+          "objective": 3.4627718193914645,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 2.0837932140554014,
+        "nmse": 1.4718675602291549,
+        "complexity": 3,
+        "objective": 1.4748675602291548,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 28.304683916959107,
+        "nmse": 1.6865187839017972,
+        "complexity": 3,
+        "objective": 1.689518783901797,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "d5c9a6ad41e49bfa144df5d060c54cafc1202d44c779ebc750d993481b139213",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 0.031776923800151714,
+          "nmse": 0.217079773214831,
+          "complexity": 3,
+          "objective": 0.220079773214831,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.3434852877900913,
+          "nmse": 2.346473461214895,
+          "complexity": 5,
+          "objective": 2.351473461214895,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.14653026806133376,
+          "nmse": 1.0010017822968396,
+          "complexity": 1,
+          "objective": 1.0020017822968394,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.3434852877900913,
+          "nmse": 2.346473461214895,
+          "complexity": 5,
+          "objective": 2.351473461214895,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.0575111146367338,
+          "nmse": 7.224244687159091,
+          "complexity": 3,
+          "objective": 7.227244687159091,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.3847223322061988,
+          "nmse": 2.6281787737302555,
+          "complexity": 3,
+          "objective": 2.6311787737302557,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 8.452521106461047e-05,
+          "nmse": 0.0005774225901864598,
+          "complexity": 7,
+          "objective": 0.00757742259018646,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.3847223322061988,
+          "nmse": 2.6281787737302555,
+          "complexity": 3,
+          "objective": 2.6311787737302557,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x/(x*x+1)",
+        "valid": true,
+        "mse": 8.452521106461047e-05,
+        "nmse": 0.0005774225901864598,
+        "complexity": 7,
+        "objective": 0.00757742259018646,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 6.119272688691937e-05,
+        "nmse": 0.0005152274616540667,
+        "complexity": 7,
+        "objective": 0.007515227461654067,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "af7190e93a980e7b91060b398b2c4e6a0fb03f84510238344e5124a3a62ce4ee",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 5.361318516603883,
+          "nmse": 450.4289280983727,
+          "complexity": 3,
+          "objective": 450.4319280983727,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 4.157441576642901,
+          "nmse": 349.2857115650509,
+          "complexity": 5,
+          "objective": 349.2907115650509,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.957582444770531,
+          "nmse": 416.5092112400392,
+          "complexity": 1,
+          "objective": 416.51021124003915,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 4.157441576642901,
+          "nmse": 349.2857115650509,
+          "complexity": 5,
+          "objective": 349.2907115650509,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.8631863234724613,
+          "nmse": 156.53481805458168,
+          "complexity": 3,
+          "objective": 156.53781805458166,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 4.119729965592307,
+          "nmse": 346.11738636859496,
+          "complexity": 3,
+          "objective": 346.12038636859495,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.236066448118923,
+          "nmse": 439.9059280611502,
+          "complexity": 7,
+          "objective": 439.9129280611502,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 4.119729965592307,
+          "nmse": 346.11738636859496,
+          "complexity": 3,
+          "objective": 346.12038636859495,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 1.8631863234724613,
+        "nmse": 156.53481805458168,
+        "complexity": 3,
+        "objective": 156.53781805458166,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 2.1086127719306353,
+        "nmse": 3.742818268036112,
+        "complexity": 3,
+        "objective": 3.7458182680361123,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "585c856bbd5f78cea90abab450bae58f2d945fb473303d2729282c00d5e754a3",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 3.5684134401978898,
+          "nmse": 26.512613798866337,
+          "complexity": 3,
+          "objective": 26.515613798866337,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 2.1462999543944887,
+          "nmse": 15.946588796680981,
+          "complexity": 5,
+          "objective": 15.951588796680982,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 3.2875623453099085,
+          "nmse": 24.425945104629808,
+          "complexity": 1,
+          "objective": 24.42694510462981,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 2.1462999543944887,
+          "nmse": 15.946588796680981,
+          "complexity": 5,
+          "objective": 15.951588796680982,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.0586016232693758,
+          "nmse": 7.865202974641165,
+          "complexity": 3,
+          "objective": 7.868202974641165,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 2.06789853357143,
+          "nmse": 15.364081577044214,
+          "complexity": 3,
+          "objective": 15.367081577044214,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 3.4473605228506585,
+          "nmse": 25.6132143036455,
+          "complexity": 7,
+          "objective": 25.6202143036455,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 2.06789853357143,
+          "nmse": 15.364081577044214,
+          "complexity": 3,
+          "objective": 15.367081577044214,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 1.0586016232693758,
+        "nmse": 7.865202974641165,
+        "complexity": 3,
+        "objective": 7.868202974641165,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 2.2080642649617217,
+        "nmse": 1.1566968982055164,
+        "complexity": 3,
+        "objective": 1.1596968982055162,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "aeb74d609c9c2abee00ece292e16072041143d573eeb9b92dfa0f51b98f875c0",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 0.7029898666762383,
+          "nmse": 1.6176575868227778,
+          "complexity": 3,
+          "objective": 1.6206575868227777,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.9085433594520739,
+          "nmse": 2.090658952630361,
+          "complexity": 5,
+          "objective": 2.095658952630361,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.4355750393364117,
+          "nmse": 1.0023064348631425,
+          "complexity": 1,
+          "objective": 1.0033064348631424,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.9085433594520739,
+          "nmse": 2.090658952630361,
+          "complexity": 5,
+          "objective": 2.095658952630361,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.6005517542207726,
+          "nmse": 3.683046955654296,
+          "complexity": 3,
+          "objective": 3.6860469556542963,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.981473515591521,
+          "nmse": 2.2584793238470064,
+          "complexity": 3,
+          "objective": 2.2614793238470066,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.5750866087549842,
+          "nmse": 1.3233380164228297,
+          "complexity": 7,
+          "objective": 1.3303380164228296,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.981473515591521,
+          "nmse": 2.2584793238470064,
+          "complexity": 3,
+          "objective": 2.2614793238470066,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "0",
+        "valid": true,
+        "mse": 0.4355750393364117,
+        "nmse": 1.0023064348631425,
+        "complexity": 1,
+        "objective": 1.0033064348631424,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.508856036588078,
+        "nmse": 1.0310798478162393,
+        "complexity": 1,
+        "objective": 1.0320798478162392,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "a1ca82e02cde4a20488a09c7ef19090843038f252f7b723831abee8e6f0c51ca",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 8.547270921888963,
+          "nmse": 5.130264199279929,
+          "complexity": 3,
+          "objective": 5.133264199279929,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 7.853793045483589,
+          "nmse": 4.714023184477874,
+          "complexity": 5,
+          "objective": 4.719023184477874,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 8.792469147705122,
+          "nmse": 5.277437687885528,
+          "complexity": 1,
+          "objective": 5.278437687885528,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 7.853793045483589,
+          "nmse": 4.714023184477874,
+          "complexity": 5,
+          "objective": 4.719023184477874,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 3.968771115672967,
+          "nmse": 2.382145664498663,
+          "complexity": 3,
+          "objective": 2.3851456644986633,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 7.8266293673917104,
+          "nmse": 4.697718934090929,
+          "complexity": 3,
+          "objective": 4.700718934090929,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 8.460080606184665,
+          "nmse": 5.077930611252884,
+          "complexity": 7,
+          "objective": 5.084930611252884,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 7.8266293673917104,
+          "nmse": 4.697718934090929,
+          "complexity": 3,
+          "objective": 4.700718934090929,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 3.968771115672967,
+        "nmse": 2.382145664498663,
+        "complexity": 3,
+        "objective": 2.3851456644986633,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 52.492159904182834,
+        "nmse": 1.8920571708139533,
+        "complexity": 3,
+        "objective": 1.8950571708139532,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "69fc8ac8181173072287616984d5fea11cf8a98f424663298db67c8fc2cc5226",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 0.14775389622851473,
+          "nmse": 8.168293856178304,
+          "complexity": 3,
+          "objective": 8.171293856178304,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.13830825054438975,
+          "nmse": 7.646109253411901,
+          "complexity": 5,
+          "objective": 7.651109253411901,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.019157633046982512,
+          "nmse": 1.0590933999775358,
+          "complexity": 1,
+          "objective": 1.0600933999775357,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 0.13830825054438975,
+          "nmse": 7.646109253411901,
+          "complexity": 5,
+          "objective": 7.651109253411901,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.4060871590005928,
+          "nmse": 77.7328611649783,
+          "complexity": 3,
+          "objective": 77.7358611649783,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.16570483508648365,
+          "nmse": 9.160677457077773,
+          "complexity": 3,
+          "objective": 9.163677457077773,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.06007517201394209,
+          "nmse": 3.321141919069315,
+          "complexity": 7,
+          "objective": 3.3281419190693153,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 0.16570483508648365,
+          "nmse": 9.160677457077773,
+          "complexity": 3,
+          "objective": 9.163677457077773,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "0",
+        "valid": true,
+        "mse": 0.019157633046982512,
+        "nmse": 1.0590933999775358,
+        "complexity": 1,
+        "objective": 1.0600933999775357,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.039731848654772486,
+        "nmse": 1.5891058594019623,
+        "complexity": 1,
+        "objective": 1.5901058594019621,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "7898114afb81b4d20f39972c1dd5de7af2cf742074ebbdb7541d4c58c1c7bb72",
+      "seed": 1,
+      "candidates": [
+        {
+          "expression": "sin(x)",
+          "valid": true,
+          "mse": 20.45170353085437,
+          "nmse": 2095.783953826817,
+          "complexity": 3,
+          "objective": 2095.7869538268174,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 17.785653531305883,
+          "nmse": 1822.5810492020648,
+          "complexity": 5,
+          "objective": 1822.586049202065,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 20.613075651567097,
+          "nmse": 2112.3205274513325,
+          "complexity": 1,
+          "objective": 2112.3215274513327,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "sin(x*x)",
+          "valid": true,
+          "mse": 17.785653531305883,
+          "nmse": 1822.5810492020648,
+          "complexity": 5,
+          "objective": 1822.586049202065,
+          "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 12.487717815189347,
+          "nmse": 1279.676217558479,
+          "complexity": 3,
+          "objective": 1279.679217558479,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 17.63872704812462,
+          "nmse": 1807.524789200107,
+          "complexity": 3,
+          "objective": 1807.527789200107,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 20.44975615289342,
+          "nmse": 2095.5843966859443,
+          "complexity": 7,
+          "objective": 2095.5913966859443,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "x*x",
+          "valid": true,
+          "mse": 17.63872704812462,
+          "nmse": 1807.524789200107,
+          "complexity": 3,
+          "objective": 1807.527789200107,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 12.487717815189347,
+        "nmse": 1279.676217558479,
+        "complexity": 3,
+        "objective": 1279.679217558479,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 5.89504299459177,
+        "nmse": 10.549556566187395,
+        "complexity": 3,
+        "objective": 10.552556566187395,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "0df4b0d79d8ca430f54ee3cce6e15461cc377b1442cc18634db78f67e368dad8",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 6.569188540900704,
+          "nmse": 39.0017571139979,
+          "complexity": 3,
+          "objective": 39.0047571139979,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.953805088382321,
+          "nmse": 11.599884982861584,
+          "complexity": 3,
+          "objective": 11.602884982861584,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.306999040347102,
+          "nmse": 31.508044911047442,
+          "complexity": 7,
+          "objective": 31.515044911047443,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.989032142077401,
+          "nmse": 29.620251972940384,
+          "complexity": 1,
+          "objective": 29.621251972940385,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 2.1411026666527597,
+          "nmse": 12.711884525919618,
+          "complexity": 3,
+          "objective": 12.714884525919619,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 2.314261240229248,
+          "nmse": 13.739939754779067,
+          "complexity": 7,
+          "objective": 13.746939754779067,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.5978596340195317,
+          "nmse": 9.486610554756085,
+          "complexity": 1,
+          "objective": 9.487610554756085,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 5.444340298805919,
+          "nmse": 32.32345009705953,
+          "complexity": 1,
+          "objective": 32.324450097059525,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "1",
+        "valid": true,
+        "mse": 1.5978596340195317,
+        "nmse": 9.486610554756085,
+        "complexity": 1,
+        "objective": 9.487610554756085,
+        "structure": "Expression(body=Constant(value=1))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 8.817661676512166,
+        "nmse": 3.3761400629482226,
+        "complexity": 1,
+        "objective": 3.3771400629482224,
+        "structure": "Expression(body=Constant(value=1))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "18952471ac5de6ff97ef98f994ad7defd25bebad115e210c046269122776354e",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 1.6008430501515123,
+          "nmse": 16.340490803912513,
+          "complexity": 3,
+          "objective": 16.343490803912513,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 0.37851238368270285,
+          "nmse": 3.8636380525553844,
+          "complexity": 3,
+          "objective": 3.8666380525553845,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.701248864303709,
+          "nmse": 7.1579475685166845,
+          "complexity": 7,
+          "objective": 7.164947568516684,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.5676616292372062,
+          "nmse": 5.794365432268107,
+          "complexity": 1,
+          "objective": 5.795365432268107,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.07499353122419596,
+          "nmse": 0.7654910999588115,
+          "complexity": 3,
+          "objective": 0.7684910999588115,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 0.05154661805723235,
+          "nmse": 0.5261584127546273,
+          "complexity": 7,
+          "objective": 0.5331584127546273,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 0.1969774774483597,
+          "nmse": 2.0106334962182397,
+          "complexity": 1,
+          "objective": 2.0116334962182396,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 0.8392867172628797,
+          "nmse": 8.566959068212219,
+          "complexity": 1,
+          "objective": 8.567959068212218,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "1/(x*x+1)",
+        "valid": true,
+        "mse": 0.05154661805723235,
+        "nmse": 0.5261584127546273,
+        "complexity": 7,
+        "objective": 0.5331584127546273,
+        "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.6145832613838511,
+        "nmse": 1.2893452123287512,
+        "complexity": 7,
+        "objective": 1.296345212328751,
+        "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "3141958903ca4821956a0c39a613ea37b66514725ac9e4d4f556098658480e15",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 5.586119395582293,
+          "nmse": 3.9457024192544825,
+          "complexity": 3,
+          "objective": 3.9487024192544826,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 2.0837932140554014,
+          "nmse": 1.4718675602291549,
+          "complexity": 3,
+          "objective": 1.4748675602291548,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.7962211773913745,
+          "nmse": 4.094105818836198,
+          "complexity": 7,
+          "objective": 4.1011058188361975,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 6.074990489406621,
+          "nmse": 4.291011876680636,
+          "complexity": 1,
+          "objective": 4.292011876680636,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 3.1703332812061404,
+          "nmse": 2.2393348247068965,
+          "complexity": 3,
+          "objective": 2.2423348247068966,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 3.317179689642567,
+          "nmse": 2.3430583916404393,
+          "complexity": 7,
+          "objective": 2.3500583916404394,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 2.757934677482961,
+          "nmse": 1.948040984891269,
+          "complexity": 1,
+          "objective": 1.9490409848912689,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 5.58215405325673,
+          "nmse": 3.942901537336434,
+          "complexity": 1,
+          "objective": 3.943901537336434,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 2.0837932140554014,
+        "nmse": 1.4718675602291549,
+        "complexity": 3,
+        "objective": 1.4748675602291548,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 28.304683916959107,
+        "nmse": 1.6865187839017972,
+        "complexity": 3,
+        "objective": 1.689518783901797,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "d5c9a6ad41e49bfa144df5d060c54cafc1202d44c779ebc750d993481b139213",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 0.7254452277418929,
+          "nmse": 4.955781324472939,
+          "complexity": 3,
+          "objective": 4.958781324472939,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.0575111146367338,
+          "nmse": 7.224244687159091,
+          "complexity": 3,
+          "objective": 7.227244687159091,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 8.452521106461047e-05,
+          "nmse": 0.0005774225901864598,
+          "complexity": 7,
+          "objective": 0.00757742259018646,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.14653026806133376,
+          "nmse": 1.0010017822968396,
+          "complexity": 1,
+          "objective": 1.0020017822968394,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.8656144703575063,
+          "nmse": 5.9133286185425655,
+          "complexity": 3,
+          "objective": 5.916328618542566,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 0.7799757232902257,
+          "nmse": 5.328299057195322,
+          "complexity": 7,
+          "objective": 5.335299057195321,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.1707496423396533,
+          "nmse": 7.997818431034632,
+          "complexity": 1,
+          "objective": 7.998818431034632,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 0.059594248197239186,
+          "nmse": 0.4071100766369106,
+          "complexity": 1,
+          "objective": 0.4081100766369106,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "x/(x*x+1)",
+        "valid": true,
+        "mse": 8.452521106461047e-05,
+        "nmse": 0.0005774225901864598,
+        "complexity": 7,
+        "objective": 0.00757742259018646,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 6.119272688691937e-05,
+        "nmse": 0.0005152274616540667,
+        "complexity": 7,
+        "objective": 0.007515227461654067,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "af7190e93a980e7b91060b398b2c4e6a0fb03f84510238344e5124a3a62ce4ee",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 6.331375446329456,
+          "nmse": 531.9278544720789,
+          "complexity": 3,
+          "objective": 531.930854472079,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.8631863234724613,
+          "nmse": 156.53481805458168,
+          "complexity": 3,
+          "objective": 156.53781805458166,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.236066448118923,
+          "nmse": 439.9059280611502,
+          "complexity": 7,
+          "objective": 439.9129280611502,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.957582444770531,
+          "nmse": 416.5092112400392,
+          "complexity": 1,
+          "objective": 416.51021124003915,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 1.7809563933688424,
+          "nmse": 149.62630494172166,
+          "complexity": 3,
+          "objective": 149.62930494172164,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 1.9011863373380684,
+          "nmse": 159.7273732926635,
+          "complexity": 7,
+          "objective": 159.7343732926635,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.509805584829211,
+          "nmse": 126.84568340892773,
+          "complexity": 1,
+          "objective": 126.84668340892773,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 5.413747412423089,
+          "nmse": 454.8337198062501,
+          "complexity": 1,
+          "objective": 454.83471980625006,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "1",
+        "valid": true,
+        "mse": 1.509805584829211,
+        "nmse": 126.84568340892773,
+        "complexity": 1,
+        "objective": 126.84668340892773,
+        "structure": "Expression(body=Constant(value=1))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.9009242079454527,
+        "nmse": 1.5991535423200645,
+        "complexity": 1,
+        "objective": 1.6001535423200643,
+        "structure": "Expression(body=Constant(value=1))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "585c856bbd5f78cea90abab450bae58f2d945fb473303d2729282c00d5e754a3",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 4.635324073527541,
+          "nmse": 34.439551092826385,
+          "complexity": 3,
+          "objective": 34.442551092826385,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.0586016232693758,
+          "nmse": 7.865202974641165,
+          "complexity": 3,
+          "objective": 7.868202974641165,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 3.4473605228506585,
+          "nmse": 25.6132143036455,
+          "complexity": 7,
+          "objective": 25.6202143036455,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 3.2875623453099085,
+          "nmse": 24.425945104629808,
+          "complexity": 1,
+          "objective": 24.42694510462981,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 1.1380254360936464,
+          "nmse": 8.455306366844104,
+          "complexity": 3,
+          "objective": 8.458306366844104,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 1.263552936327276,
+          "nmse": 9.387951137581982,
+          "complexity": 7,
+          "objective": 9.394951137581982,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 0.736241858714966,
+          "nmse": 5.470132984811009,
+          "complexity": 1,
+          "objective": 5.4711329848110095,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 3.6226785315707812,
+          "nmse": 26.915792812296427,
+          "complexity": 1,
+          "objective": 26.91679281229643,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "1",
+        "valid": true,
+        "mse": 0.736241858714966,
+        "nmse": 5.470132984811009,
+        "complexity": 1,
+        "objective": 5.4711329848110095,
+        "structure": "Expression(body=Constant(value=1))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 5.95428311020023,
+        "nmse": 3.119157768139279,
+        "complexity": 1,
+        "objective": 3.1201577681392787,
+        "structure": "Expression(body=Constant(value=1))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "aeb74d609c9c2abee00ece292e16072041143d573eeb9b92dfa0f51b98f875c0",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 1.745061882704963,
+          "nmse": 4.01558077555194,
+          "complexity": 3,
+          "objective": 4.01858077555194,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.6005517542207726,
+          "nmse": 3.683046955654296,
+          "complexity": 3,
+          "objective": 3.6860469556542963,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.5750866087549842,
+          "nmse": 1.3233380164228297,
+          "complexity": 7,
+          "objective": 1.3303380164228296,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.4355750393364117,
+          "nmse": 1.0023064348631425,
+          "complexity": 1,
+          "objective": 1.0033064348631424,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.9396954369837921,
+          "nmse": 2.162343335227136,
+          "complexity": 3,
+          "objective": 2.1653433352271363,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 0.8274058166917287,
+          "nmse": 1.9039524752767147,
+          "complexity": 7,
+          "objective": 1.9109524752767146,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.3722563632601317,
+          "nmse": 3.1577139619224877,
+          "complexity": 1,
+          "objective": 3.1587139619224875,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 0.7638591191999508,
+          "nmse": 1.7577244822600677,
+          "complexity": 1,
+          "objective": 1.7587244822600676,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "0",
+        "valid": true,
+        "mse": 0.4355750393364117,
+        "nmse": 1.0023064348631425,
+        "complexity": 1,
+        "objective": 1.0033064348631424,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.508856036588078,
+        "nmse": 1.0310798478162393,
+        "complexity": 1,
+        "objective": 1.0320798478162392,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "a1ca82e02cde4a20488a09c7ef19090843038f252f7b723831abee8e6f0c51ca",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 9.016793714941118,
+          "nmse": 5.412082337251043,
+          "complexity": 3,
+          "objective": 5.415082337251043,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 3.968771115672967,
+          "nmse": 2.382145664498663,
+          "complexity": 3,
+          "objective": 2.3851456644986633,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 8.460080606184665,
+          "nmse": 5.077930611252884,
+          "complexity": 7,
+          "objective": 5.084930611252884,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 8.792469147705122,
+          "nmse": 5.277437687885528,
+          "complexity": 1,
+          "objective": 5.278437687885528,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 4.78003360895218,
+          "nmse": 2.86908365482612,
+          "complexity": 3,
+          "objective": 2.87208365482612,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 4.948074059494221,
+          "nmse": 2.9699453117602586,
+          "complexity": 7,
+          "objective": 2.9769453117602587,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 4.453397967065938,
+          "nmse": 2.673029597912306,
+          "complexity": 1,
+          "objective": 2.674029597912306,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 8.615208787161459,
+          "nmse": 5.171042033651647,
+          "complexity": 1,
+          "objective": 5.172042033651647,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 3.968771115672967,
+        "nmse": 2.382145664498663,
+        "complexity": 3,
+        "objective": 2.3851456644986633,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 52.492159904182834,
+        "nmse": 1.8920571708139533,
+        "complexity": 3,
+        "objective": 1.8950571708139532,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "69fc8ac8181173072287616984d5fea11cf8a98f424663298db67c8fc2cc5226",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 1.0262211485272137,
+          "nmse": 56.73268940150875,
+          "complexity": 3,
+          "objective": 56.73568940150875,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 1.4060871590005928,
+          "nmse": 77.7328611649783,
+          "complexity": 3,
+          "objective": 77.7358611649783,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.06007517201394209,
+          "nmse": 3.321141919069315,
+          "complexity": 7,
+          "objective": 3.3281419190693153,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.019157633046982512,
+          "nmse": 1.0590933999775358,
+          "complexity": 1,
+          "objective": 1.0600933999775357,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.701348771749429,
+          "nmse": 38.77273635112078,
+          "complexity": 3,
+          "objective": 38.77573635112078,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 0.6179692325075619,
+          "nmse": 34.16325669945063,
+          "complexity": 7,
+          "objective": 34.170256699450626,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 0.9537688463385715,
+          "nmse": 52.72730132078992,
+          "complexity": 1,
+          "objective": 52.72830132078992,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 0.19142073563887677,
+          "nmse": 10.582332234717855,
+          "complexity": 1,
+          "objective": 10.583332234717854,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "0",
+        "valid": true,
+        "mse": 0.019157633046982512,
+        "nmse": 1.0590933999775358,
+        "complexity": 1,
+        "objective": 1.0600933999775357,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.039731848654772486,
+        "nmse": 1.5891058594019623,
+        "complexity": 1,
+        "objective": 1.5901058594019621,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "7898114afb81b4d20f39972c1dd5de7af2cf742074ebbdb7541d4c58c1c7bb72",
+      "seed": 2,
+      "candidates": [
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 20.97967639751986,
+          "nmse": 2149.887860640454,
+          "complexity": 3,
+          "objective": 2149.8908606404543,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x+1",
+          "valid": true,
+          "mse": 12.487717815189347,
+          "nmse": 1279.676217558479,
+          "complexity": 3,
+          "objective": 1279.679217558479,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 20.44975615289342,
+          "nmse": 2095.5843966859443,
+          "complexity": 7,
+          "objective": 2095.5913966859443,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 20.613075651567097,
+          "nmse": 2112.3205274513325,
+          "complexity": 1,
+          "objective": 2112.3215274513327,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 13.753368645383864,
+          "nmse": 1409.373516224457,
+          "complexity": 3,
+          "objective": 1409.376516224457,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "1/(x*x+1)",
+          "valid": true,
+          "mse": 14.243498200172922,
+          "nmse": 1459.5994377313625,
+          "complexity": 7,
+          "objective": 1459.6064377313626,
+          "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 12.53490025040574,
+          "nmse": 1284.5112275360002,
+          "complexity": 1,
+          "objective": 1284.5122275360002,
+          "structure": "Expression(body=Constant(value=1))"
+        },
+        {
+          "expression": "x",
+          "valid": true,
+          "mse": 20.44213612198504,
+          "nmse": 2094.8035356451337,
+          "complexity": 1,
+          "objective": 2094.804535645134,
+          "structure": "Expression(body=Name(id='x', ctx=Load()))"
+        }
+      ],
+      "best": {
+        "expression": "x+1",
+        "valid": true,
+        "mse": 12.487717815189347,
+        "nmse": 1279.676217558479,
+        "complexity": 3,
+        "objective": 1279.679217558479,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 5.89504299459177,
+        "nmse": 10.549556566187395,
+        "complexity": 3,
+        "objective": 10.552556566187395,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 1.0
+    },
+    {
+      "task": "0df4b0d79d8ca430f54ee3cce6e15461cc377b1442cc18634db78f67e368dad8",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.989032142077401,
+          "nmse": 29.620251972940384,
+          "complexity": 1,
+          "objective": 29.621251972940385,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 6.569188540900704,
+          "nmse": 39.0017571139979,
+          "complexity": 3,
+          "objective": 39.0047571139979,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.306999040347102,
+          "nmse": 31.508044911047442,
+          "complexity": 7,
+          "objective": 31.515044911047443,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 2.1411026666527597,
+          "nmse": 12.711884525919618,
+          "complexity": 3,
+          "objective": 12.714884525919619,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.989032142077401,
+          "nmse": 29.620251972940384,
+          "complexity": 1,
+          "objective": 29.621251972940385,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 0.75166281805742,
+          "nmse": 4.462677616721156,
+          "complexity": 5,
+          "objective": 4.467677616721156,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 0.75166281805742,
+          "nmse": 4.462677616721156,
+          "complexity": 5,
+          "objective": 4.467677616721156,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.5978596340195317,
+          "nmse": 9.486610554756085,
+          "complexity": 1,
+          "objective": 9.487610554756085,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "x*x+1",
+        "valid": true,
+        "mse": 0.75166281805742,
+        "nmse": 4.462677616721156,
+        "complexity": 5,
+        "objective": 4.467677616721156,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 1.5735807010027252,
+        "nmse": 0.6024986035797717,
+        "complexity": 5,
+        "objective": 0.6074986035797717,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "18952471ac5de6ff97ef98f994ad7defd25bebad115e210c046269122776354e",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.5676616292372062,
+          "nmse": 5.794365432268107,
+          "complexity": 1,
+          "objective": 5.795365432268107,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 1.6008430501515123,
+          "nmse": 16.340490803912513,
+          "complexity": 3,
+          "objective": 16.343490803912513,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.701248864303709,
+          "nmse": 7.1579475685166845,
+          "complexity": 7,
+          "objective": 7.164947568516684,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.07499353122419596,
+          "nmse": 0.7654910999588115,
+          "complexity": 3,
+          "objective": 0.7684910999588115,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.5676616292372062,
+          "nmse": 5.794365432268107,
+          "complexity": 1,
+          "objective": 5.795365432268107,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 0.6478398173919832,
+          "nmse": 6.612778546591525,
+          "complexity": 5,
+          "objective": 6.617778546591525,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 0.6478398173919832,
+          "nmse": 6.612778546591525,
+          "complexity": 5,
+          "objective": 6.617778546591525,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 0.1969774774483597,
+          "nmse": 2.0106334962182397,
+          "complexity": 1,
+          "objective": 2.0116334962182396,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "cos(x)",
+        "valid": true,
+        "mse": 0.07499353122419596,
+        "nmse": 0.7654910999588115,
+        "complexity": 3,
+        "objective": 0.7684910999588115,
+        "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.3913785258675209,
+        "nmse": 0.8210800069616604,
+        "complexity": 3,
+        "objective": 0.8240800069616604,
+        "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "3141958903ca4821956a0c39a613ea37b66514725ac9e4d4f556098658480e15",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 6.074990489406621,
+          "nmse": 4.291011876680636,
+          "complexity": 1,
+          "objective": 4.292011876680636,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 5.586119395582293,
+          "nmse": 3.9457024192544825,
+          "complexity": 3,
+          "objective": 3.9487024192544826,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.7962211773913745,
+          "nmse": 4.094105818836198,
+          "complexity": 7,
+          "objective": 4.1011058188361975,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 3.1703332812061404,
+          "nmse": 2.2393348247068965,
+          "complexity": 3,
+          "objective": 2.2423348247068966,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 6.074990489406621,
+          "nmse": 4.291011876680636,
+          "complexity": 1,
+          "objective": 4.292011876680636,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 2.0779101996881,
+          "nmse": 1.467712148864348,
+          "complexity": 5,
+          "objective": 1.472712148864348,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 2.0779101996881,
+          "nmse": 1.467712148864348,
+          "complexity": 5,
+          "objective": 1.472712148864348,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 2.757934677482961,
+          "nmse": 1.948040984891269,
+          "complexity": 1,
+          "objective": 1.9490409848912689,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "x*x+1",
+        "valid": true,
+        "mse": 2.0779101996881,
+        "nmse": 1.467712148864348,
+        "complexity": 5,
+        "objective": 1.472712148864348,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 22.07742194243497,
+        "nmse": 1.3154708568829157,
+        "complexity": 5,
+        "objective": 1.3204708568829155,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "d5c9a6ad41e49bfa144df5d060c54cafc1202d44c779ebc750d993481b139213",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.14653026806133376,
+          "nmse": 1.0010017822968396,
+          "complexity": 1,
+          "objective": 1.0020017822968394,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 0.7254452277418929,
+          "nmse": 4.955781324472939,
+          "complexity": 3,
+          "objective": 4.958781324472939,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 8.452521106461047e-05,
+          "nmse": 0.0005774225901864598,
+          "complexity": 7,
+          "objective": 0.00757742259018646,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.8656144703575063,
+          "nmse": 5.9133286185425655,
+          "complexity": 3,
+          "objective": 5.916328618542566,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.14653026806133376,
+          "nmse": 1.0010017822968396,
+          "complexity": 1,
+          "objective": 1.0020017822968394,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 2.161728705893267,
+          "nmse": 14.767558375964008,
+          "complexity": 5,
+          "objective": 14.772558375964008,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 2.161728705893267,
+          "nmse": 14.767558375964008,
+          "complexity": 5,
+          "objective": 14.772558375964008,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.1707496423396533,
+          "nmse": 7.997818431034632,
+          "complexity": 1,
+          "objective": 7.998818431034632,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "x/(x*x+1)",
+        "valid": true,
+        "mse": 8.452521106461047e-05,
+        "nmse": 0.0005774225901864598,
+        "complexity": 7,
+        "objective": 0.00757742259018646,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 6.119272688691937e-05,
+        "nmse": 0.0005152274616540667,
+        "complexity": 7,
+        "objective": 0.007515227461654067,
+        "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "af7190e93a980e7b91060b398b2c4e6a0fb03f84510238344e5124a3a62ce4ee",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.957582444770531,
+          "nmse": 416.5092112400392,
+          "complexity": 1,
+          "objective": 416.51021124003915,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 6.331375446329456,
+          "nmse": 531.9278544720789,
+          "complexity": 3,
+          "objective": 531.930854472079,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 5.236066448118923,
+          "nmse": 439.9059280611502,
+          "complexity": 7,
+          "objective": 439.9129280611502,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 1.7809563933688424,
+          "nmse": 149.62630494172166,
+          "complexity": 3,
+          "objective": 149.62930494172164,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 4.957582444770531,
+          "nmse": 416.5092112400392,
+          "complexity": 1,
+          "objective": 416.51021124003915,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 1.1334161719047946,
+          "nmse": 95.22348463710148,
+          "complexity": 5,
+          "objective": 95.22848463710147,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 1.1334161719047946,
+          "nmse": 95.22348463710148,
+          "complexity": 5,
+          "objective": 95.22848463710147,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.509805584829211,
+          "nmse": 126.84568340892773,
+          "complexity": 1,
+          "objective": 126.84668340892773,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "x*x+1",
+        "valid": true,
+        "mse": 1.1334161719047946,
+        "nmse": 95.22348463710148,
+        "complexity": 5,
+        "objective": 95.22848463710147,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 3.969595608181653,
+        "nmse": 7.0460898069088245,
+        "complexity": 5,
+        "objective": 7.051089806908824,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "585c856bbd5f78cea90abab450bae58f2d945fb473303d2729282c00d5e754a3",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 3.2875623453099085,
+          "nmse": 24.425945104629808,
+          "complexity": 1,
+          "objective": 24.42694510462981,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 4.635324073527541,
+          "nmse": 34.439551092826385,
+          "complexity": 3,
+          "objective": 34.442551092826385,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 3.4473605228506585,
+          "nmse": 25.6132143036455,
+          "complexity": 7,
+          "objective": 25.6202143036455,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 1.1380254360936464,
+          "nmse": 8.455306366844104,
+          "complexity": 3,
+          "objective": 8.458306366844104,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 3.2875623453099085,
+          "nmse": 24.425945104629808,
+          "complexity": 1,
+          "objective": 24.42694510462981,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 0.19410740267237392,
+          "nmse": 1.442180030088748,
+          "complexity": 5,
+          "objective": 1.4471800300887478,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 0.19410740267237392,
+          "nmse": 1.442180030088748,
+          "complexity": 5,
+          "objective": 1.4471800300887478,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 0.736241858714966,
+          "nmse": 5.470132984811009,
+          "complexity": 1,
+          "objective": 5.4711329848110095,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "x*x+1",
+        "valid": true,
+        "mse": 0.19410740267237392,
+        "nmse": 1.442180030088748,
+        "complexity": 5,
+        "objective": 1.4471800300887478,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.44057233181267913,
+        "nmse": 0.230794301474614,
+        "complexity": 5,
+        "objective": 0.235794301474614,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "aeb74d609c9c2abee00ece292e16072041143d573eeb9b92dfa0f51b98f875c0",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.4355750393364117,
+          "nmse": 1.0023064348631425,
+          "complexity": 1,
+          "objective": 1.0033064348631424,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 1.745061882704963,
+          "nmse": 4.01558077555194,
+          "complexity": 3,
+          "objective": 4.01858077555194,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.5750866087549842,
+          "nmse": 1.3233380164228297,
+          "complexity": 7,
+          "objective": 1.3303380164228296,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.9396954369837921,
+          "nmse": 2.162343335227136,
+          "complexity": 3,
+          "objective": 2.1653433352271363,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.4355750393364117,
+          "nmse": 1.0023064348631425,
+          "complexity": 1,
+          "objective": 1.0033064348631424,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 2.571073523156714,
+          "nmse": 5.916325096801299,
+          "complexity": 5,
+          "objective": 5.921325096801299,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 2.571073523156714,
+          "nmse": 5.916325096801299,
+          "complexity": 5,
+          "objective": 5.921325096801299,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 1.3722563632601317,
+          "nmse": 3.1577139619224877,
+          "complexity": 1,
+          "objective": 3.1587139619224875,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "0",
+        "valid": true,
+        "mse": 0.4355750393364117,
+        "nmse": 1.0023064348631425,
+        "complexity": 1,
+        "objective": 1.0033064348631424,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.508856036588078,
+        "nmse": 1.0310798478162393,
+        "complexity": 1,
+        "objective": 1.0320798478162392,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "a1ca82e02cde4a20488a09c7ef19090843038f252f7b723831abee8e6f0c51ca",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 8.792469147705122,
+          "nmse": 5.277437687885528,
+          "complexity": 1,
+          "objective": 5.278437687885528,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 9.016793714941118,
+          "nmse": 5.412082337251043,
+          "complexity": 3,
+          "objective": 5.415082337251043,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 8.460080606184665,
+          "nmse": 5.077930611252884,
+          "complexity": 7,
+          "objective": 5.084930611252884,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 4.78003360895218,
+          "nmse": 2.86908365482612,
+          "complexity": 3,
+          "objective": 2.87208365482612,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 8.792469147705122,
+          "nmse": 5.277437687885528,
+          "complexity": 1,
+          "objective": 5.278437687885528,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 4.066403475075845,
+          "nmse": 2.440746801950981,
+          "complexity": 5,
+          "objective": 2.445746801950981,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 4.066403475075845,
+          "nmse": 2.440746801950981,
+          "complexity": 5,
+          "objective": 2.445746801950981,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 4.453397967065938,
+          "nmse": 2.673029597912306,
+          "complexity": 1,
+          "objective": 2.674029597912306,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "x*x+1",
+        "valid": true,
+        "mse": 4.066403475075845,
+        "nmse": 2.440746801950981,
+        "complexity": 5,
+        "objective": 2.445746801950981,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 44.6008853475052,
+        "nmse": 1.607619596915725,
+        "complexity": 5,
+        "objective": 1.6126195969157249,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "69fc8ac8181173072287616984d5fea11cf8a98f424663298db67c8fc2cc5226",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.019157633046982512,
+          "nmse": 1.0590933999775358,
+          "complexity": 1,
+          "objective": 1.0600933999775357,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 1.0262211485272137,
+          "nmse": 56.73268940150875,
+          "complexity": 3,
+          "objective": 56.73568940150875,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 0.06007517201394209,
+          "nmse": 3.321141919069315,
+          "complexity": 7,
+          "objective": 3.3281419190693153,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 0.701348771749429,
+          "nmse": 38.77273635112078,
+          "complexity": 3,
+          "objective": 38.77573635112078,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 0.019157633046982512,
+          "nmse": 1.0590933999775358,
+          "complexity": 1,
+          "objective": 1.0600933999775357,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 1.7628533586745156,
+          "nmse": 97.45600370994076,
+          "complexity": 5,
+          "objective": 97.46100370994075,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 1.7628533586745156,
+          "nmse": 97.45600370994076,
+          "complexity": 5,
+          "objective": 97.46100370994075,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 0.9537688463385715,
+          "nmse": 52.72730132078992,
+          "complexity": 1,
+          "objective": 52.72830132078992,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "0",
+        "valid": true,
+        "mse": 0.019157633046982512,
+        "nmse": 1.0590933999775358,
+        "complexity": 1,
+        "objective": 1.0600933999775357,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 0.039731848654772486,
+        "nmse": 1.5891058594019623,
+        "complexity": 1,
+        "objective": 1.5901058594019621,
+        "structure": "Expression(body=Constant(value=0))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    },
+    {
+      "task": "7898114afb81b4d20f39972c1dd5de7af2cf742074ebbdb7541d4c58c1c7bb72",
+      "seed": 3,
+      "candidates": [
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 20.613075651567097,
+          "nmse": 2112.3205274513325,
+          "complexity": 1,
+          "objective": 2112.3215274513327,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "2*x",
+          "valid": true,
+          "mse": 20.97967639751986,
+          "nmse": 2149.887860640454,
+          "complexity": 3,
+          "objective": 2149.8908606404543,
+          "structure": "Expression(body=BinOp(left=Constant(value=2), op=Mult(), right=Name(id='x', ctx=Load())))"
+        },
+        {
+          "expression": "x/(x*x+1)",
+          "valid": true,
+          "mse": 20.44975615289342,
+          "nmse": 2095.5843966859443,
+          "complexity": 7,
+          "objective": 2095.5913966859443,
+          "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+        },
+        {
+          "expression": "cos(x)",
+          "valid": true,
+          "mse": 13.753368645383864,
+          "nmse": 1409.373516224457,
+          "complexity": 3,
+          "objective": 1409.376516224457,
+          "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+        },
+        {
+          "expression": "0",
+          "valid": true,
+          "mse": 20.613075651567097,
+          "nmse": 2112.3205274513325,
+          "complexity": 1,
+          "objective": 2112.3215274513327,
+          "structure": "Expression(body=Constant(value=0))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 10.269031452080137,
+          "nmse": 1052.3168060862938,
+          "complexity": 5,
+          "objective": 1052.321806086294,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "x*x+1",
+          "valid": true,
+          "mse": 10.269031452080137,
+          "nmse": 1052.3168060862938,
+          "complexity": 5,
+          "objective": 1052.321806086294,
+          "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+        },
+        {
+          "expression": "1",
+          "valid": true,
+          "mse": 12.53490025040574,
+          "nmse": 1284.5112275360002,
+          "complexity": 1,
+          "objective": 1284.5122275360002,
+          "structure": "Expression(body=Constant(value=1))"
+        }
+      ],
+      "best": {
+        "expression": "x*x+1",
+        "valid": true,
+        "mse": 10.269031452080137,
+        "nmse": 1052.3168060862938,
+        "complexity": 5,
+        "objective": 1052.321806086294,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "heldout": {
+        "valid": true,
+        "mse": 5.852350688195035,
+        "nmse": 10.473155952708145,
+        "complexity": 5,
+        "objective": 10.478155952708146,
+        "structure": "Expression(body=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1)))"
+      },
+      "validity": 1.0,
+      "diversity": 0.75
+    }
+  ]
+}
