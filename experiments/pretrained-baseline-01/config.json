@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "model_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "dataset_seed": 20261111,
+  "sampling_seeds": [11, 22, 33],
+  "k": 8,
+  "points_per_regime": 24,
+  "penalty": 0.001,
+  "torch_threads": 3,
+  "generation": {"do_sample": true, "temperature": 1.0, "top_k": 0, "top_p": 1.0, "num_beams": 1, "repetition_penalty": 1.0, "use_cache": true},
+  "inventory": ["x", "0", "1", "2*x", "x+1", "x*x", "x*x+1", "sin(x)", "cos(x)", "exp(x)", "1/(x*x+1)", "x/(x*x+1)", "sin(x)+x", "sin(x*x)"]
+}
