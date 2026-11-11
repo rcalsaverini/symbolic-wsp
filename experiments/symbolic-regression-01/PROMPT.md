@@ -1,4 +1,4 @@
-Read the [experiment proposal](../../docs/experimento-wsp-otimizacao-simbolica.md)
+Read the [experiment proposal](../../docs/wsp-symbolic-optimization-experiment.md)
 for the scientific question, pilot design and implementation gaps before starting.
 
 Investigate a systematic generation failure on development tasks. Read architecture

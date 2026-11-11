@@ -1,7 +1,7 @@
 # Experimental protocol and limits
 
 For the research motivation and proposed scientific pilot, see the
-[detailed experiment proposal (Português)](experimento-wsp-otimizacao-simbolica.md).
+[detailed experiment proposal](wsp-symbolic-optimization-experiment.md).
 This page describes the current implementation’s operational rules.
 
 Original latent-space encoder/decoder/surrogate optimization and direct WSP editing

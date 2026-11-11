@@ -11,7 +11,7 @@ categorical neural head, **not a pretrained LLM**. WSP improvement is a hypothes
 
 The intended experiment asks whether direct, gradient-free edits to a pretrained
 model improve its symbolic-expression proposals on unseen functions, under matched
-generation budgets. See the detailed [experiment proposal (Português)](docs/experimento-wsp-otimizacao-simbolica.md)
+generation budgets. See the detailed [experiment proposal](docs/wsp-symbolic-optimization-experiment.md)
 for hypotheses, controls, data isolation, a proposed pilot, interpretation criteria,
 and the distinction between today's finite-catalog experiment and future structural
 symbolic search. This is a research plan, not a report of pretrained-model gains.
