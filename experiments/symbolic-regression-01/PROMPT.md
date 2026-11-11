@@ -1,3 +1,6 @@
+Read the [experiment proposal](../../docs/wsp-symbolic-optimization-experiment.md)
+for the scientific question, pilot design and implementation gaps before starting.
+
 Investigate a systematic generation failure on development tasks. Read architecture
 and methodology first. Freeze the observation prompt, expression inventory, K and
 seeds. Inspect baseline weights and successful/failed contexts. State a mechanistic

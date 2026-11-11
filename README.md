@@ -7,6 +7,15 @@ No Pi dependency, gradient descent, PPO, PointAdapter or vocabulary surgery.
 This is a working research prototype. The default demonstration uses a synthetic
 categorical neural head, **not a pretrained LLM**. WSP improvement is a hypothesis.
 
+## Research experiment
+
+The intended experiment asks whether direct, gradient-free edits to a pretrained
+model improve its symbolic-expression proposals on unseen functions, under matched
+generation budgets. See the detailed [experiment proposal](docs/wsp-symbolic-optimization-experiment.md)
+for hypotheses, controls, data isolation, a proposed pilot, interpretation criteria,
+and the distinction between today's finite-catalog experiment and future structural
+symbolic search. This is a research plan, not a report of pretrained-model gains.
+
 ## Quick start
 
 Requires Python 3.11+ and [uv](https://docs.astral.sh/uv/).
