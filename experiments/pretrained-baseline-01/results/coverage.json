@@ -1,0 +1,322 @@
+[
+  {
+    "task": "task-00",
+    "group": "representable",
+    "target": "sin(x)",
+    "target_in_inventory": true,
+    "min_observation_nmse": 0.0,
+    "observation_selector": {
+      "expression": "sin(x)",
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    }
+  },
+  {
+    "task": "task-01",
+    "group": "representable",
+    "target": "cos(x)",
+    "target_in_inventory": true,
+    "min_observation_nmse": 0.0,
+    "observation_selector": {
+      "expression": "cos(x)",
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='cos', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    }
+  },
+  {
+    "task": "task-02",
+    "group": "representable",
+    "target": "x*x",
+    "target_in_inventory": true,
+    "min_observation_nmse": 0.0,
+    "observation_selector": {
+      "expression": "x*x",
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+    }
+  },
+  {
+    "task": "task-03",
+    "group": "representable",
+    "target": "exp(x)",
+    "target_in_inventory": true,
+    "min_observation_nmse": 0.0,
+    "observation_selector": {
+      "expression": "exp(x)",
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='exp', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='exp', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='exp', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    }
+  },
+  {
+    "task": "task-04",
+    "group": "representable",
+    "target": "1/(x*x+1)",
+    "target_in_inventory": true,
+    "min_observation_nmse": 0.0,
+    "observation_selector": {
+      "expression": "1/(x*x+1)",
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 7,
+      "objective": 0.007,
+      "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 7,
+      "objective": 0.007,
+      "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 7,
+      "objective": 0.007,
+      "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+    }
+  },
+  {
+    "task": "task-05",
+    "group": "outside_catalog",
+    "target": "sin(2*x)",
+    "target_in_inventory": false,
+    "min_observation_nmse": 0.09825864133252549,
+    "observation_selector": {
+      "expression": "x",
+      "valid": true,
+      "mse": 0.060768050383499896,
+      "nmse": 0.09825864133252549,
+      "complexity": 1,
+      "objective": 0.09925864133252549,
+      "structure": "Expression(body=Name(id='x', ctx=Load()))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.05518089719654375,
+      "nmse": 0.09860508420628694,
+      "complexity": 1,
+      "objective": 0.09960508420628694,
+      "structure": "Expression(body=Name(id='x', ctx=Load()))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 3.0870174700144424,
+      "nmse": 9.05773119724675,
+      "complexity": 1,
+      "objective": 9.058731197246749,
+      "structure": "Expression(body=Name(id='x', ctx=Load()))"
+    }
+  },
+  {
+    "task": "task-06",
+    "group": "outside_catalog",
+    "target": "cos(2*x)",
+    "target_in_inventory": false,
+    "min_observation_nmse": 0.938603357610052,
+    "observation_selector": {
+      "expression": "1/(x*x+1)",
+      "valid": true,
+      "mse": 0.18724590380463701,
+      "nmse": 0.938603357610052,
+      "complexity": 7,
+      "objective": 0.945603357610052,
+      "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.22844528296336877,
+      "nmse": 0.7670677813282312,
+      "complexity": 7,
+      "objective": 0.7740677813282312,
+      "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 1.314764487334492,
+      "nmse": 55.566011132642544,
+      "complexity": 7,
+      "objective": 55.57301113264254,
+      "structure": "Expression(body=BinOp(left=Constant(value=1), op=Div(), right=BinOp(left=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())), op=Add(), right=Constant(value=1))))"
+    }
+  },
+  {
+    "task": "task-07",
+    "group": "outside_catalog",
+    "target": "2*x*x",
+    "target_in_inventory": false,
+    "min_observation_nmse": 0.7501103992218758,
+    "observation_selector": {
+      "expression": "x*x",
+      "valid": true,
+      "mse": 0.33631843753191754,
+      "nmse": 0.7501103992218758,
+      "complexity": 3,
+      "objective": 0.7531103992218758,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.17229891605264303,
+      "nmse": 0.8070970193297665,
+      "complexity": 3,
+      "objective": 0.8100970193297665,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 6.828797223756033,
+      "nmse": 2.070729769469459,
+      "complexity": 3,
+      "objective": 2.073729769469459,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load())))"
+    }
+  },
+  {
+    "task": "task-08",
+    "group": "outside_catalog",
+    "target": "exp(x/2)",
+    "target_in_inventory": false,
+    "min_observation_nmse": 0.9266628740123732,
+    "observation_selector": {
+      "expression": "x+1",
+      "valid": true,
+      "mse": 0.06685049893209284,
+      "nmse": 0.9266628740123732,
+      "complexity": 3,
+      "objective": 0.9296628740123732,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.0865668808854561,
+      "nmse": 0.8983402738687094,
+      "complexity": 3,
+      "objective": 0.9013402738687094,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.13290797359116693,
+      "nmse": 1.3883386311400985,
+      "complexity": 3,
+      "objective": 1.3913386311400984,
+      "structure": "Expression(body=BinOp(left=Name(id='x', ctx=Load()), op=Add(), right=Constant(value=1)))"
+    }
+  },
+  {
+    "task": "task-09",
+    "group": "outside_catalog",
+    "target": "1/(x*x+2)",
+    "target_in_inventory": false,
+    "min_observation_nmse": 40.48955378409343,
+    "observation_selector": {
+      "expression": "sin(x*x)",
+      "valid": true,
+      "mse": 0.11751184598029629,
+      "nmse": 40.48955378409343,
+      "complexity": 5,
+      "objective": 40.49455378409343,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.1214022936560357,
+      "nmse": 58.662952451981944,
+      "complexity": 5,
+      "objective": 58.66795245198195,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.24001290981200415,
+      "nmse": 109.97454027576534,
+      "complexity": 5,
+      "objective": 109.97954027576533,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[BinOp(left=Name(id='x', ctx=Load()), op=Mult(), right=Name(id='x', ctx=Load()))], keywords=[]))"
+    }
+  }
+]

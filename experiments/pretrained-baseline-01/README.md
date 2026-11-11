@@ -5,6 +5,81 @@ or an independent final test. The ten functions and four comparisons follow the
 baseline proposal discussed before execution. The committed `config.json` fixes the
 model revision, inventory, generation seeds, dataset seed, K, and decoding settings.
 
+## Executed outcome
+
+The full pinned-model study completed on CPU in **371.2 seconds** of trial-loop
+wall time, with a peak process RSS of **1316.2 MiB**. All 480 model-generated
+candidates were valid. See [the generated results report](RESULTS.md) and
+[raw artifacts](results/). The complete suite had 860 candidate evaluations across
+four methods, plus reserved-point evaluations of the selected candidates.
+
+On these ten functions, conditioning on observations did not improve mean
+interpolation NMSE over the no-observations generator (8.423 versus 8.209).
+Conditioning changed proposal frequencies, but neither model condition proposed
+any trigonometric or exponential catalog entries in 240 draws each. The conditioned
+model repeated candidates heavily (54.6% duplicate rate) and selected the literal
+target in only 20% of the 15 representable-task repeats. Uniform sampling recovered
+40%; exhaustive observation selection recovered all five representable targets.
+
+Mean interpolation NMSE favored conditioning over uniform sampling slightly, but
+the descriptive paired interval crossed zero. Extrapolation conclusions also varied
+by function and metric: mean extrapolation NMSE was worse than the no-observations
+control while mean extrapolation MSE was better. Low target variance, especially for
+sine on [1, 2], magnifies normalized errors. Do not select a favorable aggregate
+while omitting this disagreement or the per-function table.
+
+Coverage is a substantial limitation outside the catalog. For `1/(x*x+2)`, even the
+lowest observation NMSE in the inventory was about 40.49. No weight edit can add its
+missing expression while decoding is restricted to this fixed inventory. Exhaustive
+selection also illustrates that minimizing the observation objective need not
+minimize extrapolation error: it was worse than the conditioned model on some
+outside-catalog functions. No held-out result was used to change the selector.
+
+For a catalog of 14 cheap expressions, exhaustive selection took about 0.017 s,
+compared with 306.1 s for conditioned generation. These timings have different
+candidate budgets and exclude model loading. This run establishes no practical
+advantage for neural search in this catalog, and supplies no evidence about WSP.
+
+**Recommended next step:** investigate prompt/model suitability and catalog effects
+before editing weights. A separately declared follow-up could compare richer
+numeric conditioning and a stronger model, include observation-shuffling controls,
+and expand constants/structures with an explicit coverage audit. A no-observations
+ablation also changes prompt length and tokens, so differences alone would not
+establish numerical understanding. Keep this run as the unchanged reference;
+follow-ups must not be presented as additional draws from its frozen protocol.
+
+## Smoke test and verification history
+
+The first smoke attempt failed after one recorded row because the grammar mask
+returned no allowed continuation for an already finished batch member. Transformers
+still invokes its mask while longer batch mates run. The fix allows valid completed
+rows to absorb EOS padding; it does not change sampling settings, inventory, or
+tasks. A regression test covers completed, padded, and invalid prefixes, and an
+offline Transformers test covers mixed-length batched completions.
+
+The corrected smoke run completed both tasks with two candidates each in 6.61 s.
+The [failed attempt](smoke/failed/) and [successful smoke artifacts](smoke/passed/)
+are preserved. Failed-call timing is unavailable; do not count it as zero. Smoke
+mode reindexes its two selected tasks for effective-seed derivation, so its second
+seed differs from the corresponding full-run task. It is not a numerical replay
+of the full study.
+
+Verification: **29 tests passed** with optional HF dependencies installed; Ruff lint
+and format checks passed. All 100 full-run records, all 860 candidate scores,
+selected candidates, reserved scores, summaries, descriptive comparisons, configuration
+and dataset digests, and recorded source hashes were independently recomputed and
+checked against the saved artifacts. No real-model test or model download is added
+to the default automated suite.
+
+Regenerate the Markdown tables from the committed records with:
+
+```bash
+uv run --no-sync python scripts/report_pretrained_baseline.py experiments/pretrained-baseline-01/results --output experiments/pretrained-baseline-01/RESULTS.md
+uv run --no-sync python scripts/verify_pretrained_baseline.py experiments/pretrained-baseline-01/results
+```
+
+The exact-score verification command assumes the recorded NumPy version and numerical environment.
+
 ## Questions
 
 1. Can SmolLM2-135M-Instruct run reliably with the catalog-constrained decoder?

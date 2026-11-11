@@ -1,5 +1,9 @@
 # Executed verification
 
+For the subsequent real pretrained-model baseline study, see the
+[feasibility experiment](../experiments/pretrained-baseline-01/README.md).
+The checks below describe the initial toolkit implementation.
+
 Executed on CPU with Python 3.12.14:
 
 - `pytest -q`: **24 passed** (including optional Transformers integration).
