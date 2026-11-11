@@ -14,7 +14,10 @@ model improve its symbolic-expression proposals on unseen functions, under match
 generation budgets. See the detailed [experiment proposal](docs/wsp-symbolic-optimization-experiment.md)
 for hypotheses, controls, data isolation, a proposed pilot, interpretation criteria,
 and the distinction between today's finite-catalog experiment and future structural
-symbolic search. This is a research plan, not a report of pretrained-model gains.
+symbolic search. The companion [interpretation and caveats document](docs/interpreting-wsp-improvements.md)
+examines capability acquisition, execution repair, compiled programs, and controls
+motivated by external investigations. These are research plans, not reports of
+pretrained-model gains.
 
 ## Quick start
 

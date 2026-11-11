@@ -1,5 +1,8 @@
 Read the [experiment proposal](../../docs/wsp-symbolic-optimization-experiment.md)
 for the scientific question, pilot design and implementation gaps before starting.
+Read [Interpreting WSP improvements](../../docs/interpreting-wsp-improvements.md)
+for competing mechanisms and additional proposed controls. Distinguish implemented
+tools from pending instrumentation when planning an investigation.
 
 Investigate a systematic generation failure on development tasks. Read architecture
 and methodology first. Freeze the observation prompt, expression inventory, K and
