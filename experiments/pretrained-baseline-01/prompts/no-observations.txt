@@ -1,0 +1,6 @@
+<|im_start|>system
+You are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>
+<|im_start|>user
+Find an expression in x for these observations. Return only the expression.
+No numerical observations are provided.<|im_end|>
+<|im_start|>assistant
