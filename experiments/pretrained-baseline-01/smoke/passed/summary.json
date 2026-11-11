@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "smoke": true,
+  "config_digest": "d2ab07a55ca8888970e88603e85386547818c5990b921eb563da5e6d6e9d1585",
+  "dataset_digest": "62e49e951d9a433527f047b8e1749c02c26162529ccd378b1573283163394285",
+  "total_seconds": 6.61086960999819,
+  "parameter_count": 134515008,
+  "metrics": {
+    "conditioned": {
+      "representable": {
+        "mean_observation_regret": 2.632757304936928,
+        "mean_numerical_validity": 1.0,
+        "mean_duplicate_rate": 0.5,
+        "mean_interpolation_nmse": 3.9345538996522067,
+        "mean_interpolation_mse": 0.8626849513393083,
+        "mean_extrapolation_nmse": 325.9237003182521,
+        "mean_extrapolation_mse": 0.44832316096899855,
+        "rows": 1,
+        "tasks": 1,
+        "selected_exact_target_rate": 0.0,
+        "mean_selected_complexity": 7.0,
+        "candidate_frequencies": {
+          "1/(x*x+1)": 2
+        },
+        "generation_seconds": 3.3799590209964663,
+        "generated_tokens": 18,
+        "generation_calls": 1,
+        "evaluator_calls": 4,
+        "failed_selections": 0
+      },
+      "outside_catalog": {
+        "mean_observation_regret": 1.6927576766385832,
+        "mean_numerical_validity": 1.0,
+        "mean_duplicate_rate": 0.0,
+        "mean_interpolation_nmse": 2.215388860649286,
+        "mean_interpolation_mse": 1.2397651292920058,
+        "mean_extrapolation_nmse": 0.9301259429490659,
+        "mean_extrapolation_mse": 0.31700157276363067,
+        "rows": 1,
+        "tasks": 1,
+        "selected_exact_target_rate": 0.0,
+        "mean_selected_complexity": 7.0,
+        "candidate_frequencies": {
+          "1/(x*x+1)": 1,
+          "x*x+1": 1
+        },
+        "generation_seconds": 3.214512710997951,
+        "generated_tokens": 15,
+        "generation_calls": 1,
+        "evaluator_calls": 4,
+        "failed_selections": 0
+      },
+      "all": {
+        "mean_observation_regret": 2.1627574907877554,
+        "mean_numerical_validity": 1.0,
+        "mean_duplicate_rate": 0.25,
+        "mean_interpolation_nmse": 3.074971380150746,
+        "mean_interpolation_mse": 1.0512250403156571,
+        "mean_extrapolation_nmse": 163.42691313060058,
+        "mean_extrapolation_mse": 0.3826623668663146,
+        "rows": 2,
+        "tasks": 2,
+        "selected_exact_target_rate": 0.0,
+        "mean_selected_complexity": 7.0,
+        "candidate_frequencies": {
+          "1/(x*x+1)": 3,
+          "x*x+1": 1
+        },
+        "generation_seconds": 6.5944717319944175,
+        "generated_tokens": 33,
+        "generation_calls": 2,
+        "evaluator_calls": 8,
+        "failed_selections": 0
+      }
+    }
+  },
+  "comparisons": {},
+  "interpretation": "Development feasibility study; no weight edits, no independent final test, descriptive intervals only."
+}

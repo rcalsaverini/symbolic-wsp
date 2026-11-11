@@ -325,7 +325,9 @@ The toolkit already supports immutable edits, rollback, candidate records, paire
 comparisons, random perturbations, and basic probes. Most controls proposed here
 require additional instrumentation or experiment scripts: program baselines,
 assistance ladders, aligned trajectory capture, runtime hooks, mechanism ablations,
-exhaustive selection, preservation suites, and repeated-session analysis.
+preservation suites, and repeated-session analysis. Exhaustive catalog selection
+is now available in the [pretrained feasibility pilot](../experiments/pretrained-baseline-01/README.md);
+it is not a general structural-search baseline.
 
 This document changes the interpretation and planned design, not the capabilities
 of the existing CLI. It reports no new experimental findings.

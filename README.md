@@ -35,6 +35,14 @@ conditions, records 240 generations each, compares validation results, records i
 retention/rejection decision and rolls back. Use a fresh output directory each run.
 Checkpoint manifests/history live in `runs/checkpoints/`.
 
+## Pretrained baseline feasibility test
+
+A reproducible ten-function test compares a pinned SmolLM2-135M-Instruct model
+with observation ablation, uniform sampling, and exhaustive catalog selection.
+See the [protocol and reproduction instructions](experiments/pretrained-baseline-01/README.md)
+for the frozen configuration and execution details. This tests catalog selection,
+not weight editing or open-ended symbolic synthesis.
+
 ## CLI and Python
 
 ```bash

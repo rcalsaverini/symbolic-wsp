@@ -50,6 +50,15 @@ class TokenGrammar:
 
     def allowed(self, prefix):
         prefix = tuple(prefix)
+        # Transformers still masks finished rows while longer batch mates run.
+        # EOS is also our padding token; only an already valid leaf may absorb it.
+        if self.eos in prefix:
+            end = prefix.index(self.eos) + 1
+            if prefix[:end] in self.sequences and all(
+                token == self.eos for token in prefix[end:]
+            ):
+                return [self.eos]
+            return []
         return sorted(
             {
                 seq[len(prefix)]

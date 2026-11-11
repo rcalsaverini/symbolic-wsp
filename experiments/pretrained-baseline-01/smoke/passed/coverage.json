@@ -1,0 +1,66 @@
+[
+  {
+    "task": "task-00",
+    "group": "representable",
+    "target": "sin(x)",
+    "target_in_inventory": true,
+    "min_observation_nmse": 0.0,
+    "observation_selector": {
+      "expression": "sin(x)",
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 0.0,
+      "nmse": 0.0,
+      "complexity": 3,
+      "objective": 0.003,
+      "structure": "Expression(body=Call(func=Name(id='sin', ctx=Load()), args=[Name(id='x', ctx=Load())], keywords=[]))"
+    }
+  },
+  {
+    "task": "task-05",
+    "group": "outside_catalog",
+    "target": "sin(2*x)",
+    "target_in_inventory": false,
+    "min_observation_nmse": 0.09825864133252549,
+    "observation_selector": {
+      "expression": "x",
+      "valid": true,
+      "mse": 0.060768050383499896,
+      "nmse": 0.09825864133252549,
+      "complexity": 1,
+      "objective": 0.09925864133252549,
+      "structure": "Expression(body=Name(id='x', ctx=Load()))"
+    },
+    "interpolation": {
+      "valid": true,
+      "mse": 0.05518089719654375,
+      "nmse": 0.09860508420628694,
+      "complexity": 1,
+      "objective": 0.09960508420628694,
+      "structure": "Expression(body=Name(id='x', ctx=Load()))"
+    },
+    "extrapolation": {
+      "valid": true,
+      "mse": 3.0870174700144424,
+      "nmse": 9.05773119724675,
+      "complexity": 1,
+      "objective": 9.058731197246749,
+      "structure": "Expression(body=Name(id='x', ctx=Load()))"
+    }
+  }
+]

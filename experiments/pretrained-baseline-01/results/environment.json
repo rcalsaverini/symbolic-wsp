@@ -1,0 +1,21 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "transformers": "4.57.6",
+    "numpy": "2.5.4",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2"
+  },
+  "loading_seconds": 3.7377047580084763,
+  "peak_rss_mib": 1316.203125,
+  "source_sha256": {
+    "src/symbolic_wsp/experiments/pretrained_baseline.py": "358700d0aee251be7913d336026ff3856d9b5f551dff69035db24e702346cee2",
+    "src/symbolic_wsp/symbolic/grammar.py": "228bb7c14e88130dbe5fda9aa75630e436a16443aee2b5e0824066cd3f664942",
+    "src/symbolic_wsp/symbolic/evaluator.py": "8901f59b5cfa88a4a2ef854b877017404ba75b53123cd06aca862f4340057288"
+  },
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "threads": 3
+}

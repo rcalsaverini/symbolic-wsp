@@ -1,0 +1,14 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "transformers": "4.57.6",
+    "numpy": "2.5.4",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2"
+  },
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "threads": 3
+}

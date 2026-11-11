@@ -1,0 +1,29 @@
+task-00 conditioned seed=11: 1/(x*x+1) (3.29s)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/work/symbolic-wsp/src/symbolic_wsp/experiments/pretrained_baseline.py", line 421, in <module>
+    main()
+  File "/workspace/work/symbolic-wsp/src/symbolic_wsp/experiments/pretrained_baseline.py", line 396, in main
+    run(cfg, generator, output, args.smoke)
+  File "/workspace/work/symbolic-wsp/src/symbolic_wsp/experiments/pretrained_baseline.py", line 315, in run
+    trace = generator.generate(
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/symbolic-wsp/src/symbolic_wsp/experiments/pretrained_baseline.py", line 115, in generate
+    output = self.model.generate(
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/symbolic-wsp/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 158, in no_grad
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/symbolic-wsp/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 2566, in generate
+    result = decoding_method(
+             ^^^^^^^^^^^^^^^^
+  File "/workspace/work/symbolic-wsp/.venv/lib/python3.12/site-packages/transformers/generation/utils.py", line 2805, in _sample
+    next_token_scores = logits_processor(input_ids, next_token_logits)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/symbolic-wsp/.venv/lib/python3.12/site-packages/transformers/generation/logits_process.py", line 93, in __call__
+    scores = processor(input_ids, scores)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/work/symbolic-wsp/.venv/lib/python3.12/site-packages/transformers/generation/logits_process.py", line 1432, in __call__
+    raise ValueError(
+ValueError: `prefix_allowed_tokens_fn` returned an empty list for batch ID 1.This means that the constraint is unsatisfiable. Please check your implementationof `prefix_allowed_tokens_fn` 
