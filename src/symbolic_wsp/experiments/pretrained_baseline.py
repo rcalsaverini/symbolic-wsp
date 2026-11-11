@@ -49,19 +49,75 @@ def make_tasks(seed: int, points: int = 24) -> list[dict]:
     return tasks
 
 
-def prompt_messages(observations: dict | None) -> list[dict]:
-    instruction = (
-        "Find an expression in x for these observations. Return only the expression."
-    )
-    if observations is None:
-        payload = "No numerical observations are provided."
-    else:
-        # Explicit serialization: precision differs from evaluator's float64 inputs.
-        payload = json.dumps(
-            {key: [float(f"{v:.6g}") for v in observations[key]] for key in ("x", "y")},
-            separators=(",", ":"),
+def validate_prompt(spec: dict) -> dict:
+    required = {
+        "version",
+        "system_message",
+        "user_template",
+        "no_observations",
+        "significant_digits",
+        "chat_template",
+        "add_generation_prompt",
+    }
+    if not isinstance(spec, dict) or set(spec) != required:
+        raise ValueError(
+            "prompt configuration must explicitly specify: "
+            + ", ".join(sorted(required))
         )
-    return [dict(role="user", content=instruction + "\n" + payload)]
+    if spec["version"] != 1:
+        raise ValueError("unsupported prompt configuration version")
+    for field in (
+        "system_message",
+        "user_template",
+        "no_observations",
+        "chat_template",
+    ):
+        if not isinstance(spec[field], str):
+            raise ValueError("prompt field must be a string: " + field)
+    if spec["user_template"].count("{observations}") != 1:
+        raise ValueError(
+            "user_template requires exactly one {observations} placeholder"
+        )
+    if (
+        type(spec["significant_digits"]) is not int
+        or not 1 <= spec["significant_digits"] <= 17
+    ):
+        raise ValueError("significant_digits must be between 1 and 17")
+    if type(spec["add_generation_prompt"]) is not bool or not spec["chat_template"]:
+        raise ValueError("explicit chat template and generation-prompt flag required")
+    return json.loads(json.dumps(spec))
+
+
+def prompt_messages(observations: dict | None, spec: dict) -> list[dict]:
+    spec = validate_prompt(spec)
+    if observations is None:
+        payload = spec["no_observations"]
+    else:
+        precision = spec["significant_digits"]
+        payload = json.dumps(
+            {
+                key: [float(format(v, f".{precision}g")) for v in observations[key]]
+                for key in ("x", "y")
+            },
+            separators=(",", ":"),
+            allow_nan=False,
+        )
+    return [
+        dict(role="system", content=spec["system_message"]),
+        dict(
+            role="user",
+            content=spec["user_template"].replace("{observations}", payload),
+        ),
+    ]
+
+
+def render_prompt(tokenizer, observations: dict | None, spec: dict) -> str:
+    return tokenizer.apply_chat_template(
+        prompt_messages(observations, spec),
+        chat_template=spec["chat_template"],
+        tokenize=False,
+        add_generation_prompt=spec["add_generation_prompt"],
+    )
 
 
 class BaselineGenerator:
@@ -71,6 +127,7 @@ class BaselineGenerator:
         import torch
         from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
 
+        self.prompt_spec = validate_prompt(cfg.get("prompt"))
         self.torch = torch
         torch.set_num_threads(cfg["torch_threads"])
         torch.use_deterministic_algorithms(True)
@@ -95,10 +152,7 @@ class BaselineGenerator:
         self.parameter_count = sum(p.numel() for p in self.model.parameters())
 
     def generate(self, observations: dict | None, k: int, seed: int) -> dict:
-        messages = prompt_messages(observations)
-        prompt = self.tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
+        prompt = render_prompt(self.tokenizer, observations, self.prompt_spec)
         ids = self.tokenizer.encode(
             prompt, add_special_tokens=False, return_tensors="pt"
         )
@@ -131,6 +185,8 @@ class BaselineGenerator:
             expressions=[self.grammar.expression(row) for row in sequences],
             token_ids=sequences,
             prompt=prompt,
+            prompt_config_digest=digest(self.prompt_spec),
+            rendered_prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(),
             prompt_tokens=width,
             generated_tokens=sum(map(len, sequences)),
             prefill_token_slots=width * k,
@@ -272,6 +328,9 @@ def write(path: Path, data) -> None:
 def run(
     cfg: dict, generator: BaselineGenerator, output: Path, smoke: bool = False
 ) -> dict:
+    prompt_spec = validate_prompt(cfg.get("prompt"))
+    if generator.prompt_spec != prompt_spec:
+        raise ValueError("generator prompt differs from experiment configuration")
     if output.exists():
         raise ValueError("use a fresh output directory")
     output.mkdir(parents=True)
@@ -279,6 +338,7 @@ def run(
     if smoke:
         tasks = [tasks[0], tasks[5]]
     write(output / "config.json", cfg)
+    write(output / "prompt-config.json", prompt_spec)
     write(output / "tasks.json", tasks)
     write(output / "effective-generation-config.json", generator.generation.to_dict())
     rows = []
@@ -368,6 +428,7 @@ def run(
         schema=1,
         smoke=smoke,
         config_digest=digest(cfg),
+        prompt_config_digest=digest(prompt_spec),
         dataset_digest=digest(tasks),
         total_seconds=time.perf_counter() - started,
         parameter_count=generator.parameter_count,

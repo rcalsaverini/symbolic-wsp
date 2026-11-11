@@ -28,7 +28,9 @@ def test_local_transformers(tmp_path):
             vocab_size=5, n_embd=8, n_layer=1, n_head=1, n_positions=512, eos_token_id=1
         )
     ).save_pretrained(path)
-    fast.chat_template = "{{ messages[0]['content'] }}"
+    fast.chat_template = (
+        "{% for message in messages %}{{ message['content'] }}\n{% endfor %}"
+    )
     fast.save_pretrained(path)
     backend = HFBackend(str(path), expressions=["x", "1", "0"])
     obs = {"x": [0.0, 1.0], "y": [0.0, 1.0]}
@@ -63,7 +65,10 @@ def test_explicit_baseline_generation(tmp_path):
     from tokenizers.pre_tokenizers import Whitespace
     from transformers import GPT2Config, GPT2LMHeadModel, PreTrainedTokenizerFast
 
-    from symbolic_wsp.experiments.pretrained_baseline import BaselineGenerator
+    from symbolic_wsp.experiments.pretrained_baseline import (
+        BaselineGenerator,
+        render_prompt,
+    )
 
     tokenizer = Tokenizer(
         WordLevel({"[UNK]": 0, "[EOS]": 1, "x": 2, "+": 3}, unk_token="[UNK]")
@@ -72,7 +77,9 @@ def test_explicit_baseline_generation(tmp_path):
     fast = PreTrainedTokenizerFast(
         tokenizer_object=tokenizer, unk_token="[UNK]", eos_token="[EOS]"
     )
-    fast.chat_template = "{{ messages[0]['content'] }}"
+    fast.chat_template = (
+        "{% for message in messages %}{{ message['content'] }}\n{% endfor %}"
+    )
     path = tmp_path / "local"
     GPT2LMHeadModel(
         GPT2Config(
@@ -82,6 +89,15 @@ def test_explicit_baseline_generation(tmp_path):
     fast.save_pretrained(path)
     cfg = dict(
         torch_threads=1,
+        prompt=dict(
+            version=1,
+            system_message="Test system",
+            user_template="Expression\n{observations}",
+            no_observations="No data",
+            significant_digits=6,
+            chat_template=fast.chat_template,
+            add_generation_prompt=True,
+        ),
         inventory=["x", "x + x"],
         generation=dict(
             do_sample=True,
@@ -95,7 +111,12 @@ def test_explicit_baseline_generation(tmp_path):
     )
     model = BaselineGenerator(str(path), cfg)
     obs = dict(x=[0.0, 1.0], y=[0.0, 1.0])
+    expected_prompt = render_prompt(model.tokenizer, obs, cfg["prompt"])
+    model.tokenizer.chat_template = "This tokenizer default must be ignored"
+    assert render_prompt(model.tokenizer, obs, cfg["prompt"]) == expected_prompt
     a = model.generate(obs, 16, 17)
+    assert a["prompt"] == expected_prompt
+    assert "prompt_config_digest" in a and "rendered_prompt_sha256" in a
     b = model.generate(obs, 16, 17)
     assert a["token_ids"] == b["token_ids"]
     assert set(a["expressions"]) == {"x", "x + x"}

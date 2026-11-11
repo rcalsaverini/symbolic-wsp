@@ -1,0 +1,489 @@
+{
+  "historical_config_digest": "d2ab07a55ca8888970e88603e85386547818c5990b921eb563da5e6d6e9d1585",
+  "explicit_config_digest": "93a20e0ac0d0e14600c0a18d9015a0fd613b833cf0a3f6beb80099b95aded197",
+  "prompt_config_digest": "17e809ef0086977998e434e58e03719f8415a014d146be363991c019d249ae39",
+  "verified_model_calls": 60,
+  "claim": "Configured replay matches every recorded prompt byte-for-byte and all prompt token counts; no model inference rerun.",
+  "calls": [
+    {
+      "task": "task-00",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-00.txt",
+      "sha256": "18ca2d8e39a016e132f81478f63101188e3a52dc5f269d0c5bd41b946646617e",
+      "tokens": 483
+    },
+    {
+      "task": "task-00",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-00.txt",
+      "sha256": "18ca2d8e39a016e132f81478f63101188e3a52dc5f269d0c5bd41b946646617e",
+      "tokens": 483
+    },
+    {
+      "task": "task-00",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-00.txt",
+      "sha256": "18ca2d8e39a016e132f81478f63101188e3a52dc5f269d0c5bd41b946646617e",
+      "tokens": 483
+    },
+    {
+      "task": "task-00",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-00",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-00",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-01",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-01.txt",
+      "sha256": "72cc34be09d049eef8391b882594c63e54bdbb07389b80008238c43027096915",
+      "tokens": 482
+    },
+    {
+      "task": "task-01",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-01.txt",
+      "sha256": "72cc34be09d049eef8391b882594c63e54bdbb07389b80008238c43027096915",
+      "tokens": 482
+    },
+    {
+      "task": "task-01",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-01.txt",
+      "sha256": "72cc34be09d049eef8391b882594c63e54bdbb07389b80008238c43027096915",
+      "tokens": 482
+    },
+    {
+      "task": "task-01",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-01",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-01",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-02",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-02.txt",
+      "sha256": "25bf5a37dd7c1400ef7ccee276ce897729b894d3c8522712bec9aa00a7d1858c",
+      "tokens": 486
+    },
+    {
+      "task": "task-02",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-02.txt",
+      "sha256": "25bf5a37dd7c1400ef7ccee276ce897729b894d3c8522712bec9aa00a7d1858c",
+      "tokens": 486
+    },
+    {
+      "task": "task-02",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-02.txt",
+      "sha256": "25bf5a37dd7c1400ef7ccee276ce897729b894d3c8522712bec9aa00a7d1858c",
+      "tokens": 486
+    },
+    {
+      "task": "task-02",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-02",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-02",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-03",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-03.txt",
+      "sha256": "3d51703d32821cd641490e7ff2fef17f292cecfc4b30fabd605e3a7d4bec9e19",
+      "tokens": 464
+    },
+    {
+      "task": "task-03",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-03.txt",
+      "sha256": "3d51703d32821cd641490e7ff2fef17f292cecfc4b30fabd605e3a7d4bec9e19",
+      "tokens": 464
+    },
+    {
+      "task": "task-03",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-03.txt",
+      "sha256": "3d51703d32821cd641490e7ff2fef17f292cecfc4b30fabd605e3a7d4bec9e19",
+      "tokens": 464
+    },
+    {
+      "task": "task-03",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-03",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-03",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-04",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-04.txt",
+      "sha256": "bb349251d498c5f3970a69bab587d1dee3e1970664d2e956e8f62767194325f5",
+      "tokens": 491
+    },
+    {
+      "task": "task-04",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-04.txt",
+      "sha256": "bb349251d498c5f3970a69bab587d1dee3e1970664d2e956e8f62767194325f5",
+      "tokens": 491
+    },
+    {
+      "task": "task-04",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-04.txt",
+      "sha256": "bb349251d498c5f3970a69bab587d1dee3e1970664d2e956e8f62767194325f5",
+      "tokens": 491
+    },
+    {
+      "task": "task-04",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-04",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-04",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-05",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-05.txt",
+      "sha256": "f1ee10ad72b800e9ac3dcec6c42ec248f24a29c318a6210a91dfa419b9d0db00",
+      "tokens": 480
+    },
+    {
+      "task": "task-05",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-05.txt",
+      "sha256": "f1ee10ad72b800e9ac3dcec6c42ec248f24a29c318a6210a91dfa419b9d0db00",
+      "tokens": 480
+    },
+    {
+      "task": "task-05",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-05.txt",
+      "sha256": "f1ee10ad72b800e9ac3dcec6c42ec248f24a29c318a6210a91dfa419b9d0db00",
+      "tokens": 480
+    },
+    {
+      "task": "task-05",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-05",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-05",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-06",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-06.txt",
+      "sha256": "10b6f4a350b18092ad03505b7281304c9332a6f057f10363de26acd28cb6df33",
+      "tokens": 482
+    },
+    {
+      "task": "task-06",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-06.txt",
+      "sha256": "10b6f4a350b18092ad03505b7281304c9332a6f057f10363de26acd28cb6df33",
+      "tokens": 482
+    },
+    {
+      "task": "task-06",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-06.txt",
+      "sha256": "10b6f4a350b18092ad03505b7281304c9332a6f057f10363de26acd28cb6df33",
+      "tokens": 482
+    },
+    {
+      "task": "task-06",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-06",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-06",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-07",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-07.txt",
+      "sha256": "cbf623e47529df06f246f3320f722719f264c1cee97e92f7a19fe4b198ca7b1d",
+      "tokens": 476
+    },
+    {
+      "task": "task-07",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-07.txt",
+      "sha256": "cbf623e47529df06f246f3320f722719f264c1cee97e92f7a19fe4b198ca7b1d",
+      "tokens": 476
+    },
+    {
+      "task": "task-07",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-07.txt",
+      "sha256": "cbf623e47529df06f246f3320f722719f264c1cee97e92f7a19fe4b198ca7b1d",
+      "tokens": 476
+    },
+    {
+      "task": "task-07",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-07",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-07",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-08",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-08.txt",
+      "sha256": "f6c26debdfecce0af7bc1493878a31f6d976954e315d17a5de5d17861755af2d",
+      "tokens": 476
+    },
+    {
+      "task": "task-08",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-08.txt",
+      "sha256": "f6c26debdfecce0af7bc1493878a31f6d976954e315d17a5de5d17861755af2d",
+      "tokens": 476
+    },
+    {
+      "task": "task-08",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-08.txt",
+      "sha256": "f6c26debdfecce0af7bc1493878a31f6d976954e315d17a5de5d17861755af2d",
+      "tokens": 476
+    },
+    {
+      "task": "task-08",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-08",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-08",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-09",
+      "method": "conditioned",
+      "seed": 11,
+      "file": "task-09.txt",
+      "sha256": "311c6910d1bbcd5a7e88089a47fa2bfafbafb374e0f8d3626330797340d61ef1",
+      "tokens": 486
+    },
+    {
+      "task": "task-09",
+      "method": "conditioned",
+      "seed": 22,
+      "file": "task-09.txt",
+      "sha256": "311c6910d1bbcd5a7e88089a47fa2bfafbafb374e0f8d3626330797340d61ef1",
+      "tokens": 486
+    },
+    {
+      "task": "task-09",
+      "method": "conditioned",
+      "seed": 33,
+      "file": "task-09.txt",
+      "sha256": "311c6910d1bbcd5a7e88089a47fa2bfafbafb374e0f8d3626330797340d61ef1",
+      "tokens": 486
+    },
+    {
+      "task": "task-09",
+      "method": "no_observations",
+      "seed": 11,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-09",
+      "method": "no_observations",
+      "seed": 22,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    },
+    {
+      "task": "task-09",
+      "method": "no_observations",
+      "seed": 33,
+      "file": "no-observations.txt",
+      "sha256": "d54de29cadf06eb12a316e962910a031060e353bce5dc46bf7ef90934ee266d4",
+      "tokens": 51
+    }
+  ]
+}

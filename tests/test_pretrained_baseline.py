@@ -8,10 +8,12 @@ from types import SimpleNamespace
 import pytest
 
 from symbolic_wsp.experiments.pretrained_baseline import (
+    digest,
     evaluate_candidates,
     make_tasks,
     prompt_messages,
     run,
+    validate_prompt,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,8 +48,11 @@ def test_no_reserved_selection_or_prompt_leakage():
     assert before["best"] == after["best"]
     assert before["interpolation"] != after["interpolation"]
     obs = dict(task["observations"], target="SECRET", heldout="SECRET")
-    assert "SECRET" not in str(prompt_messages(obs))
-    assert "No numerical observations" in prompt_messages(None)[0]["content"]
+    assert "SECRET" not in str(prompt_messages(obs, CFG["prompt"]))
+    assert (
+        "No numerical observations"
+        in prompt_messages(None, CFG["prompt"])[1]["content"]
+    )
 
 
 class FakeGenerator:
@@ -56,6 +61,7 @@ class FakeGenerator:
 
     def __init__(self):
         self.inputs = []
+        self.prompt_spec = copy.deepcopy(CFG["prompt"])
 
     def generate(self, observations, k, seed):
         self.inputs.append(observations)
@@ -86,6 +92,14 @@ def test_complete_protocol_budget_and_failures(tmp_path):
     assert sum(len(r["candidates"]) for r in rows if r["method"] == "exhaustive") == 140
     assert all(r["observation_regret"] >= -1e-12 for r in rows)
     assert summary["metrics"]["conditioned"]["all"]["mean_duplicate_rate"] == 0.875
+    assert summary["prompt_config_digest"] == digest(CFG["prompt"])
+    assert (
+        json.loads((tmp_path / "full/prompt-config.json").read_text()) == CFG["prompt"]
+    )
+    mismatched = FakeGenerator()
+    mismatched.prompt_spec["system_message"] = "different"
+    with pytest.raises(ValueError, match="differs"):
+        run(CFG, mismatched, tmp_path / "mismatched")
     assert (
         summary["comparisons"]["conditioned_minus_uniform/all/interpolation"]["tasks"]
         == 10
@@ -113,3 +127,29 @@ def test_finished_grammar_rows_absorb_only_eos():
     assert grammar.allowed([ord("x"), 999, 999, 999]) == [999]
     assert grammar.allowed([ord("s"), 999]) == []
     assert grammar.allowed([ord("x"), 999, ord("x")]) == []
+
+
+def test_prompt_configuration_changes_identity_and_rendered_messages():
+    spec = copy.deepcopy(CFG["prompt"])
+    obs = {"x": [0.123456789], "y": [0.987654321]}
+    original = prompt_messages(obs, spec)
+    assert original[0] == {"role": "system", "content": spec["system_message"]}
+    assert "0.123457" in original[1]["content"]
+    for field, replacement in (
+        ("system_message", "Different system"),
+        ("user_template", "Different instruction\n{observations}"),
+        ("significant_digits", 3),
+    ):
+        changed = copy.deepcopy(spec)
+        changed[field] = replacement
+        assert prompt_messages(obs, changed) != original
+        assert digest(changed) != digest(spec)
+    spec["no_observations"] = "Different absence control"
+    assert prompt_messages(None, spec)[1]["content"].endswith(spec["no_observations"])
+    with pytest.raises(ValueError):
+        validate_prompt(None)
+    with pytest.raises(ValueError):
+        validate_prompt({})
+    spec["user_template"] = "Missing placeholder"
+    with pytest.raises(ValueError):
+        validate_prompt(spec)

@@ -6,6 +6,8 @@ Trial-loop wall time: 371.2 s; model loading: 3.74 s; peak process RSS: 1316.2 M
 
 No weight interventions were performed. These are public development tasks, not an independent final test.
 
+See [exact prompts and task configuration](PROMPTS.md) for the instruction, system message, both rendered conditions, and all task prompt files.
+
 ## Metrics by group
 
 Each sampling method has three repeats per function. Values below average repeats and functions equally. Lower errors and regret are better.

@@ -4,6 +4,9 @@ This is a development study of a frozen pretrained model, not a WSP intervention
 or an independent final test. The ten functions and four comparisons follow the
 baseline proposal discussed before execution. The committed `config.json` fixes the
 model revision, inventory, generation seeds, dataset seed, K, and decoding settings.
+The active schema-2 config also makes the full prompt explicit; the completed
+schema-1 run is preserved in `results/config.json`. See [exact prompts and provenance](PROMPTS.md)
+for all rendered inputs and the verified equivalence of the configured replay.
 
 ## Executed outcome
 
@@ -118,7 +121,10 @@ Use the model's native chat template with an assistant generation prompt. Serial
 x and y arrays using six significant decimal digits; stored datasets and evaluator
 inputs retain float64 precision. Record the full rendered prompt for every model
 call. No examples, family labels, target formula, held-out points, or feedback are
-included. The exact instruction is stored in the source and trace.
+included. The [prompt document](PROMPTS.md) shows the exact instruction, injected
+system message, both rendered conditions, and all ten task-specific prompt files.
+The active config pins all prompt text, numerical precision, and chat-template
+formatting; new runs reject missing prompt specifications and record their digest.
 
 Use CPU float32, three PyTorch threads, deterministic algorithms, sampling with
 temperature 1, top-k disabled, top-p 1, one beam, repetition penalty 1, and KV caching.

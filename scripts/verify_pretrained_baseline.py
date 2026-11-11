@@ -47,7 +47,9 @@ for r in rows:
 assert summary["metrics"] == aggregate(rows)
 assert summary["comparisons"] == comparisons(rows)
 for path, sha in env["source_sha256"].items():
-    assert hashlib.sha256(Path(path).read_bytes()).hexdigest() == sha, path
+    snapshot = root / "source" / path
+    source = snapshot if snapshot.exists() else Path(path)
+    assert hashlib.sha256(source.read_bytes()).hexdigest() == sha, str(source)
 print(
     "PASS: all 100 records, 860 candidates, selected expressions, reserved scores, counts, source hashes and descriptive comparisons independently recomputed."
 )
