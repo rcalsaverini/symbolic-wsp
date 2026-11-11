@@ -1,5 +1,9 @@
 # Experiment: WSP as a mechanism for symbolic optimization
 
+For competing explanations of a gain and additional causal controls, see
+[Interpreting WSP improvements](interpreting-wsp-improvements.md). That companion
+separates capability acquisition, execution/access repair, and program insertion.
+
 ## Research question
 
 Given a collection of numerical observations, can we directly modify a language

@@ -2,7 +2,9 @@
 
 For the research motivation and proposed scientific pilot, see the
 [detailed experiment proposal](wsp-symbolic-optimization-experiment.md).
-This page describes the current implementation’s operational rules.
+This page describes the current implementation’s operational rules. Additional
+proposed controls for capability, execution, and program-insertion explanations are
+in [Interpreting WSP improvements](interpreting-wsp-improvements.md).
 
 Original latent-space encoder/decoder/surrogate optimization and direct WSP editing
 are different hypotheses. This toolkit tests infrastructure for the latter; it
