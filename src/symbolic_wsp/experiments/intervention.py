@@ -20,6 +20,10 @@ def run_intervention(
     dest.mkdir(exist_ok=True)
     if (dest / "summary.json").exists():
         return json.loads((dest / "summary.json").read_text())
+    if (dest / "rows.jsonl").exists():
+        raise ValueError(
+            "partial intervention exists; use a fresh study output instead of appending duplicate trials"
+        )
     rule = cfg["intervention"]
     selected = selection["variant"]
     spec = variants[selected]
@@ -241,6 +245,8 @@ def run_intervention(
                     if group == "all"
                     or (r["target"] in cfg["inventory"]) == (group == "representable")
                 ]
+                if not subset:
+                    continue
                 metrics[name + "/" + group] = {
                     k: float(np.mean([r["metrics"][k] for r in subset]))
                     for k in subset[0]["metrics"]
