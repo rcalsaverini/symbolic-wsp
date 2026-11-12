@@ -43,6 +43,20 @@ See the [protocol and reproduction instructions](experiments/pretrained-baseline
 for the frozen configuration and execution details. This tests catalog selection,
 not weight editing or open-ended symbolic synthesis.
 
+## First-class baseline diagnostics
+
+The [diagnostic suite](experiments/baseline-diagnostics-01/README.md) compares exact
+catalog probabilities, four observation controls, three explicit prompt variants,
+and pinned 135M/360M models. It also runs a development-gated rank-one intervention
+with random, restored no-edit, and first-token logit-bias controls.
+
+```bash
+uv run symbolic-wsp diagnostics --small-model LOCAL_135M --large-model LOCAL_360M --output runs/diagnostics --phase all
+```
+
+Development selection is frozen before evaluation. Use the documented preparation
+commands for local model weights; default tests never download them.
+
 ## CLI and Python
 
 ```bash

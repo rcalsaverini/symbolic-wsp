@@ -1,0 +1,248 @@
+{
+  "status": "completed",
+  "gate": {
+    "failing_targets": [
+      "x",
+      "2*x",
+      "sin(x*x)"
+    ],
+    "required": 2,
+    "rule": "target probability below threshold in every prompt variant on development only",
+    "selection": {
+      "variant": "catalog",
+      "development_objective": {
+        "minimal": 1.7599228646390053,
+        "catalog": 1.5755561402767218,
+        "few_shot": 2.609180549540814
+      },
+      "criterion": "minimum development expected observation-objective regret; lexical tie-break"
+    }
+  },
+  "decision": {
+    "chosen": "rank_one_0.001",
+    "candidate_tensor_checkpoint": "2671815c1eec0bbd93f97ca75ea9ea26f806b58db2b634ce4a15e72967b93c63",
+    "development_baseline_regret": 1.5755561402767218,
+    "development_candidate_regret": 2.8455012463326073,
+    "passed_development_screen": false,
+    "criterion": "development expected observation-regret improvement >= configured minimum; no evaluation-based reselection"
+  },
+  "metrics": {
+    "baseline/representable": {
+      "target_probability": 0.0900818917933655,
+      "exact_target_hit_probability": 0.3067950117232204,
+      "expected_observation_objective": 0.9620673572255344,
+      "observation_floor": 0.0038,
+      "expected_complexity": 5.807981940592699,
+      "expected_observation_regret": 0.9582673572255344,
+      "expected_interpolation_mse": 0.16318815053367788,
+      "expected_interpolation_nmse": 1.1611634962931392,
+      "expected_extrapolation_mse": 3.185433135855027,
+      "expected_extrapolation_nmse": 22.16736605827598
+    },
+    "baseline/outside_catalog": {
+      "target_probability": 0.0,
+      "exact_target_hit_probability": 0.0,
+      "expected_observation_objective": 9.327184320143482,
+      "observation_floor": 8.035091491516058,
+      "expected_complexity": 5.968501658589398,
+      "expected_observation_regret": 1.2920928286274245,
+      "expected_interpolation_mse": 0.23965084904081416,
+      "expected_interpolation_nmse": 12.848105063865503,
+      "expected_extrapolation_mse": 3.7213841532733056,
+      "expected_extrapolation_nmse": 40.11318966527077
+    },
+    "baseline/all": {
+      "target_probability": 0.04504094589668275,
+      "exact_target_hit_probability": 0.1533975058616102,
+      "expected_observation_objective": 5.144625838684508,
+      "observation_floor": 4.019445745758029,
+      "expected_complexity": 5.888241799591048,
+      "expected_observation_regret": 1.1251800929264795,
+      "expected_interpolation_mse": 0.20141949978724605,
+      "expected_interpolation_nmse": 7.004634280079321,
+      "expected_extrapolation_mse": 3.453408644564166,
+      "expected_extrapolation_nmse": 31.140277861773377
+    },
+    "targeted/representable": {
+      "target_probability": 0.1196938278786136,
+      "exact_target_hit_probability": 0.27654859798432224,
+      "expected_observation_objective": 10.364288165901788,
+      "observation_floor": 0.0038,
+      "expected_complexity": 4.67577736712653,
+      "expected_observation_regret": 10.360488165901788,
+      "expected_interpolation_mse": 0.444710827190955,
+      "expected_interpolation_nmse": 13.441441163403166,
+      "expected_extrapolation_mse": 3.7624044501202967,
+      "expected_extrapolation_nmse": 45.785017859059714
+    },
+    "targeted/outside_catalog": {
+      "target_probability": 0.0,
+      "exact_target_hit_probability": 0.0,
+      "expected_observation_objective": 22.281667243029123,
+      "observation_floor": 8.035091491516058,
+      "expected_complexity": 4.67113190176812,
+      "expected_observation_regret": 14.246575751513063,
+      "expected_interpolation_mse": 0.39183364128760984,
+      "expected_interpolation_nmse": 25.005543977695854,
+      "expected_extrapolation_mse": 4.9401072573481235,
+      "expected_extrapolation_nmse": 107.05488965069199
+    },
+    "targeted/all": {
+      "target_probability": 0.059846913939306814,
+      "exact_target_hit_probability": 0.13827429899216112,
+      "expected_observation_objective": 16.322977704465455,
+      "observation_floor": 4.019445745758029,
+      "expected_complexity": 4.673454634447325,
+      "expected_observation_regret": 12.303531958707428,
+      "expected_interpolation_mse": 0.41827223423928234,
+      "expected_interpolation_nmse": 19.22349257054951,
+      "expected_extrapolation_mse": 4.351255853734209,
+      "expected_extrapolation_nmse": 76.41995375487586
+    },
+    "no_edit/representable": {
+      "target_probability": 0.0900818917933655,
+      "exact_target_hit_probability": 0.3067950117232204,
+      "expected_observation_objective": 0.9620673572255344,
+      "observation_floor": 0.0038,
+      "expected_complexity": 5.807981940592699,
+      "expected_observation_regret": 0.9582673572255344,
+      "expected_interpolation_mse": 0.16318815053367788,
+      "expected_interpolation_nmse": 1.1611634962931392,
+      "expected_extrapolation_mse": 3.185433135855027,
+      "expected_extrapolation_nmse": 22.16736605827598
+    },
+    "no_edit/outside_catalog": {
+      "target_probability": 0.0,
+      "exact_target_hit_probability": 0.0,
+      "expected_observation_objective": 9.327184320143482,
+      "observation_floor": 8.035091491516058,
+      "expected_complexity": 5.968501658589398,
+      "expected_observation_regret": 1.2920928286274245,
+      "expected_interpolation_mse": 0.23965084904081416,
+      "expected_interpolation_nmse": 12.848105063865503,
+      "expected_extrapolation_mse": 3.7213841532733056,
+      "expected_extrapolation_nmse": 40.11318966527077
+    },
+    "no_edit/all": {
+      "target_probability": 0.04504094589668275,
+      "exact_target_hit_probability": 0.1533975058616102,
+      "expected_observation_objective": 5.144625838684508,
+      "observation_floor": 4.019445745758029,
+      "expected_complexity": 5.888241799591048,
+      "expected_observation_regret": 1.1251800929264795,
+      "expected_interpolation_mse": 0.20141949978724605,
+      "expected_interpolation_nmse": 7.004634280079321,
+      "expected_extrapolation_mse": 3.453408644564166,
+      "expected_extrapolation_nmse": 31.140277861773377
+    },
+    "root_logit_bias/representable": {
+      "target_probability": 0.0611516009301438,
+      "exact_target_hit_probability": 0.29491151432193047,
+      "expected_observation_objective": 2.2094469677558473,
+      "observation_floor": 0.0038,
+      "expected_complexity": 5.681487422528906,
+      "expected_observation_regret": 2.2056469677558472,
+      "expected_interpolation_mse": 0.17868404871942983,
+      "expected_interpolation_nmse": 2.533517433469196,
+      "expected_extrapolation_mse": 3.018755844292929,
+      "expected_extrapolation_nmse": 38.08013867934061
+    },
+    "root_logit_bias/outside_catalog": {
+      "target_probability": 0.0,
+      "exact_target_hit_probability": 0.0,
+      "expected_observation_objective": 11.59255866855504,
+      "observation_floor": 8.035091491516058,
+      "expected_complexity": 5.658186354528669,
+      "expected_observation_regret": 3.5574671770389834,
+      "expected_interpolation_mse": 0.2642983357702688,
+      "expected_interpolation_nmse": 15.059122525007979,
+      "expected_extrapolation_mse": 3.5440991266664144,
+      "expected_extrapolation_nmse": 66.26875437457218
+    },
+    "root_logit_bias/all": {
+      "target_probability": 0.0305758004650719,
+      "exact_target_hit_probability": 0.14745575716096523,
+      "expected_observation_objective": 6.901002818155445,
+      "observation_floor": 4.019445745758029,
+      "expected_complexity": 5.669836888528788,
+      "expected_observation_regret": 2.8815570723974155,
+      "expected_interpolation_mse": 0.22149119224484934,
+      "expected_interpolation_nmse": 8.796319979238586,
+      "expected_extrapolation_mse": 3.2814274854796714,
+      "expected_extrapolation_nmse": 52.17444652695639
+    },
+    "random_71/representable": {
+      "target_probability": 0.08993454733803755,
+      "exact_target_hit_probability": 0.3066943594955326,
+      "expected_observation_objective": 0.9632484364919931,
+      "observation_floor": 0.0038,
+      "expected_complexity": 5.808139436280007,
+      "expected_observation_regret": 0.9594484364919931,
+      "expected_interpolation_mse": 0.1631702546029275,
+      "expected_interpolation_nmse": 1.1624162611480013,
+      "expected_extrapolation_mse": 3.1851493908736677,
+      "expected_extrapolation_nmse": 22.146370064009382
+    },
+    "random_71/outside_catalog": {
+      "target_probability": 0.0,
+      "exact_target_hit_probability": 0.0,
+      "expected_observation_objective": 9.329450834202794,
+      "observation_floor": 8.035091491516058,
+      "expected_complexity": 5.968461795372895,
+      "expected_observation_regret": 1.294359342686736,
+      "expected_interpolation_mse": 0.23966273246400321,
+      "expected_interpolation_nmse": 12.850301048833225,
+      "expected_extrapolation_mse": 3.720754055816277,
+      "expected_extrapolation_nmse": 40.139925678191844
+    },
+    "random_71/all": {
+      "target_probability": 0.04496727366901877,
+      "exact_target_hit_probability": 0.1533471797477663,
+      "expected_observation_objective": 5.146349635347393,
+      "observation_floor": 4.019445745758029,
+      "expected_complexity": 5.888300615826451,
+      "expected_observation_regret": 1.1269038895893646,
+      "expected_interpolation_mse": 0.20141649353346538,
+      "expected_interpolation_nmse": 7.006358654990613,
+      "expected_extrapolation_mse": 3.4529517233449725,
+      "expected_extrapolation_nmse": 31.143147871100616
+    },
+    "random_72/representable": {
+      "target_probability": 0.08997362230250427,
+      "exact_target_hit_probability": 0.30675958021241845,
+      "expected_observation_objective": 0.9629020355543328,
+      "observation_floor": 0.0038,
+      "expected_complexity": 5.8061637902009675,
+      "expected_observation_regret": 0.9591020355543328,
+      "expected_interpolation_mse": 0.16317018349342574,
+      "expected_interpolation_nmse": 1.161746462486412,
+      "expected_extrapolation_mse": 3.187134539778482,
+      "expected_extrapolation_nmse": 22.154432036870556
+    },
+    "random_72/outside_catalog": {
+      "target_probability": 0.0,
+      "exact_target_hit_probability": 0.0,
+      "expected_observation_objective": 9.32856885512241,
+      "observation_floor": 8.035091491516058,
+      "expected_complexity": 5.968456748027815,
+      "expected_observation_regret": 1.2934773636063543,
+      "expected_interpolation_mse": 0.23965095501645858,
+      "expected_interpolation_nmse": 12.84930408349933,
+      "expected_extrapolation_mse": 3.7227401271539997,
+      "expected_extrapolation_nmse": 40.13099187880313
+    },
+    "random_72/all": {
+      "target_probability": 0.04498681115125214,
+      "exact_target_hit_probability": 0.15337979010620922,
+      "expected_observation_objective": 5.145735445338373,
+      "observation_floor": 4.019445745758029,
+      "expected_complexity": 5.887310269114392,
+      "expected_observation_regret": 1.1262896995803438,
+      "expected_interpolation_mse": 0.20141056925494216,
+      "expected_interpolation_nmse": 7.005525272992871,
+      "expected_extrapolation_mse": 3.4549373334662405,
+      "expected_extrapolation_nmse": 31.142711957836845
+    }
+  },
+  "interpretation": "Predeclared global first-token-access intervention; does not establish acquired search capability. Rejected proposals are evaluated as diagnostics, never retained on evaluation results."
+}

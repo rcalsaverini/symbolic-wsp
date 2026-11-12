@@ -1,0 +1,24 @@
+{
+  "baseline_model_manifest_digest": "a72701d9f8e7f57529d0869d0c3cc0df1b5a1267b69fbfa3f8bea7cb7780036b",
+  "hypothesis": "A shared late-MLP output direction suppresses initial tokens of under-proposed development targets. A small rank-one intervention may increase access; global steering and random controls test narrower explanations.",
+  "module": "model.layers.29.mlp.down_proj",
+  "parent_tensor": "e1e0d5bb6fc59e32dc3b46d4e2bd48433d7c46cbe8d4faabaeac559c51ab17e3",
+  "original_tensor_sha256": "e952b6f28cbddcb7ab979950abd501f49ab3afb47e11afade9f12f676282c407",
+  "desired_first_tokens": [
+    {
+      "id": 34,
+      "text": "2"
+    },
+    {
+      "id": 104,
+      "text": "x"
+    },
+    {
+      "id": 15495,
+      "text": "sin"
+    }
+  ],
+  "derived_from": "development prompts and probabilities only",
+  "prompt_variant": "catalog",
+  "scope": "baseline model manifest plus named tensor override defines edited state; tensor store is not a full model checkpoint"
+}

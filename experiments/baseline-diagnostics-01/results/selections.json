@@ -1,0 +1,20 @@
+{
+  "135m": {
+    "variant": "catalog",
+    "development_objective": {
+      "minimal": 1.7599228646390053,
+      "catalog": 1.5755561402767218,
+      "few_shot": 2.609180549540814
+    },
+    "criterion": "minimum development expected observation-objective regret; lexical tie-break"
+  },
+  "360m": {
+    "variant": "catalog",
+    "development_objective": {
+      "minimal": 1.5338770480162929,
+      "catalog": 0.49413787339271764,
+      "few_shot": 1.3030870928723997
+    },
+    "criterion": "minimum development expected observation-objective regret; lexical tie-break"
+  }
+}

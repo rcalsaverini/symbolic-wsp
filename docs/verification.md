@@ -2,6 +2,8 @@
 
 For the subsequent real pretrained-model baseline study, see the
 [feasibility experiment](../experiments/pretrained-baseline-01/README.md).
+The [first-class diagnostic suite](../experiments/baseline-diagnostics-01/README.md)
+adds exact distributions, observation/prompt/model comparisons and a gated edit.
 The checks below describe the initial toolkit implementation.
 
 Executed on CPU with Python 3.12.14:

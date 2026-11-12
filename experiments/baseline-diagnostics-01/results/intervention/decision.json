@@ -1,0 +1,8 @@
+{
+  "chosen": "rank_one_0.001",
+  "candidate_tensor_checkpoint": "2671815c1eec0bbd93f97ca75ea9ea26f806b58db2b634ce4a15e72967b93c63",
+  "development_baseline_regret": 1.5755561402767218,
+  "development_candidate_regret": 2.8455012463326073,
+  "passed_development_screen": false,
+  "criterion": "development expected observation-regret improvement >= configured minimum; no evaluation-based reselection"
+}
