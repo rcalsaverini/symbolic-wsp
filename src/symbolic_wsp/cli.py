@@ -34,6 +34,16 @@ def output(path, value):
 def execute(args):
     store = Store(args.store)
     cmd = args.command
+    if cmd == "diagnostics":
+        from .experiments.diagnostics import run_study
+
+        return run_study(
+            read(args.config),
+            {"135m": args.small_model, "360m": args.large_model},
+            args.output,
+            args.phase,
+            args.resume,
+        )
     if cmd == "import":
         return dict(checkpoint=store.import_file(args.path))
     if cmd == "inspect":
@@ -212,6 +222,19 @@ def main():
                 )
                 p.add_argument("--penalty", type=float, default=0.001)
                 p.add_argument("--final-evaluator", action="store_true")
+        p = sub.add_parser("diagnostics")
+        p.add_argument(
+            "--config", default="experiments/baseline-diagnostics-01/config.json"
+        )
+        p.add_argument("--small-model", required=True)
+        p.add_argument("--large-model", required=True)
+        p.add_argument("--output", required=True)
+        p.add_argument(
+            "--phase",
+            choices=["all", "development", "evaluation", "intervention"],
+            default="all",
+        )
+        p.add_argument("--resume", action="store_true")
         p = sub.add_parser("paired")
         p.add_argument("before")
         p.add_argument("after")

@@ -1,0 +1,49 @@
+{
+  "schema": 2,
+  "model_id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+  "revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+  "dataset_seed": 20261111,
+  "sampling_seeds": [
+    11,
+    22,
+    33
+  ],
+  "k": 8,
+  "points_per_regime": 24,
+  "penalty": 0.001,
+  "torch_threads": 3,
+  "generation": {
+    "do_sample": true,
+    "temperature": 1.0,
+    "top_k": 0,
+    "top_p": 1.0,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "use_cache": true
+  },
+  "inventory": [
+    "x",
+    "0",
+    "1",
+    "2*x",
+    "x+1",
+    "x*x",
+    "x*x+1",
+    "sin(x)",
+    "cos(x)",
+    "exp(x)",
+    "1/(x*x+1)",
+    "x/(x*x+1)",
+    "sin(x)+x",
+    "sin(x*x)"
+  ],
+  "prompt": {
+    "version": 1,
+    "system_message": "You are a helpful AI assistant named SmolLM, trained by Hugging Face",
+    "user_template": "Find an expression in x for these observations. Return only the expression.\n{observations}",
+    "no_observations": "No numerical observations are provided.",
+    "significant_digits": 6,
+    "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "add_generation_prompt": true
+  }
+}
