@@ -14,8 +14,6 @@ from .pretrained_baseline import digest, write
 def run_intervention(
     oracle, tokenizer, model, cfg, variants, selection, development, output
 ):
-    import torch
-
     dest = output / "intervention"
     dest.mkdir(exist_ok=True)
     if (dest / "summary.json").exists():
@@ -55,6 +53,8 @@ def run_intervention(
         )
         write(dest / "summary.json", result)
         return result
+    import torch
+
     module_name, module = [
         (n, m) for n, m in model.named_modules() if n.endswith(rule["module_suffix"])
     ][-1]

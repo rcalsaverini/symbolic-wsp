@@ -58,7 +58,8 @@ hashes are included. Rerunning the command materializes the tensor states locall
 Verification: **39 automated tests pass**, including uncached probability-reference
 checks for GPT-2 and Llama, exact best-of-K checks, observation-control invariants,
 a real tiny-Llama edit/rollback integration, and the complete offline phase/resume
-workflow. Ordinary tests never download pretrained weights.
+workflow. A clean core-only install also passes **34 tests with 5 optional HF tests skipped**;
+the failed-gate path is verified without PyTorch. Ordinary tests never download pretrained weights.
 
 ## Tests and phases
 

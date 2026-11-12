@@ -91,9 +91,12 @@ def test_prompt_selection_uses_development_correct_only():
     assert choose_prompt(rows, ["minimal", "catalog"])["variant"] == "catalog"
 
 
-def test_intervention_gate_records_not_attempted(tmp_path):
+def test_intervention_gate_records_not_attempted(tmp_path, monkeypatch):
+    import sys
+
     from symbolic_wsp.experiments.intervention import run_intervention
 
+    monkeypatch.setitem(sys.modules, "torch", None)
     variants, _ = prompt_variants(CFG)
     result = run_intervention(
         None, None, None, CFG, variants, dict(variant="minimal"), [], tmp_path
