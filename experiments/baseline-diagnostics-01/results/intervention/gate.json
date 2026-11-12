@@ -1,0 +1,18 @@
+{
+  "failing_targets": [
+    "x",
+    "2*x",
+    "sin(x*x)"
+  ],
+  "required": 2,
+  "rule": "target probability below threshold in every prompt variant on development only",
+  "selection": {
+    "variant": "catalog",
+    "development_objective": {
+      "minimal": 1.7599228646390053,
+      "catalog": 1.5755561402767218,
+      "few_shot": 2.609180549540814
+    },
+    "criterion": "minimum development expected observation-objective regret; lexical tie-break"
+  }
+}

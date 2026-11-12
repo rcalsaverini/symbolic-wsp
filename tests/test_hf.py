@@ -125,7 +125,8 @@ def test_explicit_baseline_generation(tmp_path):
     assert model.generation.top_k == 0
 
 
-def test_catalog_oracle_matches_uncached_full_forwards(tmp_path):
+@pytest.mark.parametrize("architecture", ["gpt2", "llama"])
+def test_catalog_oracle_matches_uncached_full_forwards(tmp_path, architecture):
     torch = pytest.importorskip("torch")
     pytest.importorskip("transformers")
     from tokenizers import Tokenizer
@@ -142,9 +143,24 @@ def test_catalog_oracle_matches_uncached_full_forwards(tmp_path):
     fast = PreTrainedTokenizerFast(
         tokenizer_object=tokenizer, unk_token="[UNK]", eos_token="[EOS]"
     )
-    model = GPT2LMHeadModel(
-        GPT2Config(vocab_size=5, n_embd=8, n_layer=1, n_head=1, n_positions=128)
-    ).eval()
+    if architecture == "gpt2":
+        model = GPT2LMHeadModel(
+            GPT2Config(vocab_size=5, n_embd=8, n_layer=1, n_head=1, n_positions=128)
+        ).eval()
+    else:
+        from transformers import LlamaConfig, LlamaForCausalLM
+
+        model = LlamaForCausalLM(
+            LlamaConfig(
+                vocab_size=5,
+                hidden_size=8,
+                intermediate_size=16,
+                num_hidden_layers=1,
+                num_attention_heads=2,
+                num_key_value_heads=2,
+                max_position_embeddings=128,
+            )
+        ).eval()
     oracle = CatalogOracle(model, fast, ["x", "x + x", "1"])
     prompt = "x + 1"
     ids = fast.encode(prompt, add_special_tokens=False)

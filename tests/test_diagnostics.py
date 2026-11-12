@@ -104,3 +104,75 @@ def test_intervention_gate_records_not_attempted(tmp_path):
         == []
     )
     assert not (tmp_path / "intervention/tensor-checkpoints").exists()
+
+
+def test_first_class_phase_workflow_and_resume(tmp_path, monkeypatch):
+    import copy
+    import hashlib
+
+    from symbolic_wsp.experiments import diagnostics, intervention
+
+    class Tokenizer:
+        def apply_chat_template(self, messages, **kwargs):
+            return json.dumps(messages, sort_keys=True)
+
+    class Oracle:
+        def __init__(self, model, tokenizer, inventory):
+            self.inventory = inventory
+
+        def distribution(self, prompt):
+            return dict(
+                probabilities={e: 1 / len(self.inventory) for e in self.inventory},
+                seconds=0.0,
+                cache_hit=False,
+                prompt=prompt,
+            )
+
+    monkeypatch.setattr(diagnostics, "validate_model", lambda path, identity: identity)
+    monkeypatch.setattr(
+        diagnostics, "load_model", lambda path, cfg: (object(), Tokenizer())
+    )
+    monkeypatch.setattr(diagnostics, "CatalogOracle", Oracle)
+    monkeypatch.setattr(
+        diagnostics.importlib.metadata, "version", lambda name: "offline-test"
+    )
+
+    def skip_intervention(*args):
+        target = args[-1] / "intervention"
+        target.mkdir(exist_ok=True)
+        (target / "summary.json").write_text(
+            json.dumps(dict(status="not_attempted", reason="offline workflow fixture"))
+        )
+
+    monkeypatch.setattr(intervention, "run_intervention", skip_intervention)
+    out = tmp_path / "study"
+    paths = {"135m": "unused", "360m": "unused"}
+    result = diagnostics.run_study(CFG, paths, out, phase="all")
+    assert result["rows"] == 270
+    assert len((out / "rows.jsonl").read_text().splitlines()) == 270
+    assert set(json.loads((out / "provenance.json").read_text())) == {
+        "development",
+        "intervention",
+        "evaluation",
+    }
+    for phase in ("development", "intervention", "evaluation"):
+        env = json.loads((out / ("environment-" + phase + ".json")).read_text())
+        for sha in env["source_sha256"].values():
+            assert (
+                hashlib.sha256(
+                    (out / "source-snapshots" / (sha + ".py")).read_bytes()
+                ).hexdigest()
+                == sha
+            )
+    diagnostics.run_study(CFG, paths, out, phase="evaluation", resume=True)
+    assert len((out / "rows.jsonl").read_text().splitlines()) == 270
+    changed = copy.deepcopy(CFG)
+    changed["k"] = 9
+    with pytest.raises(ValueError, match="configuration mismatch"):
+        diagnostics.run_study(changed, paths, out, phase="evaluation", resume=True)
+
+    monkeypatch.setattr(
+        diagnostics, "source_fingerprint", lambda: {"changed": "source"}
+    )
+    with pytest.raises(ValueError, match="source changed"):
+        diagnostics.run_study(CFG, paths, out, phase="evaluation", resume=True)

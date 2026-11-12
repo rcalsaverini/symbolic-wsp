@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "models": [
+    {
+      "key": "135m",
+      "model_id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+      "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac"
+    },
+    {
+      "key": "360m",
+      "model_id": "HuggingFaceTB/SmolLM2-360M-Instruct",
+      "revision": "a10cc1512eabd3dde888204e902eca88bddb4951"
+    }
+  ],
+  "inventory": [
+    "x",
+    "0",
+    "1",
+    "2*x",
+    "x+1",
+    "x*x",
+    "x*x+1",
+    "sin(x)",
+    "cos(x)",
+    "exp(x)",
+    "1/(x*x+1)",
+    "x/(x*x+1)",
+    "sin(x)+x",
+    "sin(x*x)"
+  ],
+  "prompt": {
+    "version": 1,
+    "system_message": "You are a helpful AI assistant named SmolLM, trained by Hugging Face",
+    "user_template": "Find an expression in x for these observations. Return only the expression.\n{observations}",
+    "no_observations": "No numerical observations are provided.",
+    "significant_digits": 6,
+    "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "add_generation_prompt": true
+  },
+  "points": 24,
+  "penalty": 0.001,
+  "k": 8,
+  "threads": 3,
+  "development_seed": 2026111201,
+  "evaluation_seed": 2026111202,
+  "control_seed": 101,
+  "demonstration_seed": 2026111203,
+  "development_targets": [
+    "x",
+    "2*x",
+    "x*x+1",
+    "x/(x*x+1)",
+    "sin(x*x)"
+  ],
+  "evaluation_targets": [
+    "sin(x)",
+    "cos(x)",
+    "x*x",
+    "exp(x)",
+    "1/(x*x+1)",
+    "sin(2*x)",
+    "cos(2*x)",
+    "2*x*x",
+    "exp(x/2)",
+    "1/(x*x+2)"
+  ],
+  "demonstration_targets": [
+    "x+1",
+    "sin(x)+x"
+  ],
+  "demonstration_points": 8,
+  "prompt_variants": [
+    "minimal",
+    "catalog",
+    "few_shot"
+  ],
+  "observation_controls": [
+    "correct",
+    "shuffled",
+    "other_function",
+    "absent"
+  ],
+  "intervention": {
+    "model": "135m",
+    "module_suffix": "mlp.down_proj",
+    "relative_norms": [
+      0.001,
+      0.01
+    ],
+    "random_seeds": [
+      71,
+      72
+    ],
+    "repeated_failure_probability_threshold": 0.05,
+    "minimum_failing_development_tasks": 2,
+    "minimum_development_improvement": 0.001,
+    "maximum_allowed_observation_regret_ratio": 1.0,
+    "token_bias_strength": 1.0,
+    "hypothesis": "A shared late-MLP output direction suppresses initial tokens of under-proposed development targets. A small rank-one intervention may increase access; global steering and random controls test narrower explanations."
+  },
+  "development_controls": [
+    "correct"
+  ]
+}

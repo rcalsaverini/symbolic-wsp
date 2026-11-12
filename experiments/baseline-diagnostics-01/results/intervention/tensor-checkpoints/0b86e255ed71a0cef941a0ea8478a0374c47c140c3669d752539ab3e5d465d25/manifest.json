@@ -1,0 +1,17 @@
+{
+  "id": "0b86e255ed71a0cef941a0ea8478a0374c47c140c3669d752539ab3e5d465d25",
+  "parent": "e1e0d5bb6fc59e32dc3b46d4e2bd48433d7c46cbe8d4faabaeac559c51ab17e3",
+  "spec": {
+    "mode": "random",
+    "tensor": "model.layers.29.mlp.down_proj",
+    "norm": 0.17157732856145352,
+    "seed": 71
+  },
+  "hypothesis": "Norm-matched random control; no tuning",
+  "delta": {
+    "model.layers.29.mlp.down_proj": {
+      "norm": 0.1715773272942228,
+      "changed": 884706
+    }
+  }
+}

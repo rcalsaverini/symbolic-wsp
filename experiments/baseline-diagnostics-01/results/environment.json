@@ -1,0 +1,35 @@
+{
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "transformers": "4.57.6",
+    "numpy": "2.5.4",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2"
+  },
+  "threads": 3,
+  "peak_rss_mib": 4214.07421875,
+  "invocation_seconds": 1164.0644736870001,
+  "source_sha256": {
+    "src/symbolic_wsp/__init__.py": "67a855836ed38dc316d69cc4382a43b0b18694dfe25ba42f1c6657ad8151ab20",
+    "src/symbolic_wsp/cli.py": "1c6ea7a097d9da6c41d4da93bd597d2909cc32115493ab757d23d52630065574",
+    "src/symbolic_wsp/wsp/checkpoints.py": "0f504b62a49e63ec3c74fd9ee46ac42701f560c56ed61371fe760755c9f5f9ed",
+    "src/symbolic_wsp/wsp/upstream_dsl.py": "d72bd9d20e81df4d7f8abf764be17800c0b0fe62036cb6a5d92c770a97c0e189",
+    "src/symbolic_wsp/wsp/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/symbolic_wsp/wsp/editing.py": "09e4cf4e96079b38877488f7f33c1b16a03942f361daddd82f4ea8b41af903e5",
+    "src/symbolic_wsp/inference/catalog.py": "e7710cc0c57144f8755add0791b8508ac398e9eebc161db336c955a2318917d3",
+    "src/symbolic_wsp/inference/hf.py": "9900da6323b98be653731f8ab51d073f3b49cede3a52afe62df4385b51f89548",
+    "src/symbolic_wsp/inference/backend.py": "4860fcc6068daee1c41592fe61cff473ac87384ca1b5bfa71d67b0c6ad749cdd",
+    "src/symbolic_wsp/inference/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/symbolic_wsp/experiments/diagnostics.py": "0abedbf0734646be9685a823dccc34675d5e31096013fa587e39420e4e6e93b8",
+    "src/symbolic_wsp/experiments/intervention.py": "825972a9e34c35c3cb62db867cdeb4f68ad4e26faa7b35edc269091bf32411ef",
+    "src/symbolic_wsp/experiments/pretrained_baseline.py": "52bf7c0d48d2c3d4be6f00c10dcdd2b18bd6f6045038ecc07bbd1bc876492ee4",
+    "src/symbolic_wsp/experiments/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/symbolic_wsp/experiments/runner.py": "9d9f111129a4a579f31a60f547695b8222c8937efedf325031cb87d0f04aaee6",
+    "src/symbolic_wsp/symbolic/evaluator.py": "8901f59b5cfa88a4a2ef854b877017404ba75b53123cd06aca862f4340057288",
+    "src/symbolic_wsp/symbolic/datasets.py": "a03b46d3a5a35a17de705ea49c91448fbbc884a2ccca10ead0184672b16f333f",
+    "src/symbolic_wsp/symbolic/grammar.py": "228bb7c14e88130dbe5fda9aa75630e436a16443aee2b5e0824066cd3f664942",
+    "src/symbolic_wsp/symbolic/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

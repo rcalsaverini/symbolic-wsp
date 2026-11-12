@@ -4,6 +4,62 @@ This follow-up makes the proposed baseline tests a reproducible CLI experiment.
 It does not overwrite the initial feasibility study. The frozen configuration is
 [`config.json`](config.json); model preparation uses the two pinned model configs.
 
+## Executed findings
+
+See [the generated report](RESULTS.md) and [raw records](results/). The complete run
+contains **270 matrix records** (30 development and 240 evaluation distributions)
+and **75 intervention records**. This includes both pretrained models, all three
+prompts and all four evaluation controls. Exact probability checks, all expected
+best-of-eight metrics, rendered prompts, frozen selections, no-edit equality,
+rollback and phase source provenance passed the independent artifact audit.
+
+Both models selected the explicit-catalog prompt on development. It raised some
+useful expression probabilities substantially: for example, the 135M probability
+of `sin(x)` rose from about 0.000477 under the minimal prompt to 0.0745 with the
+catalog. The earlier absence of sine in sampled outputs did not mean that the
+constrained decoder prohibited it.
+
+However, correct observations did not consistently improve results over controls.
+On five representable evaluation functions, selected-prompt expected interpolation
+NMSE was 1.161 with correct data versus 1.153 with shuffled data for 135M; for 360M,
+4.415 versus 4.411. Average distribution total variation after shuffling was about
+0.029 and 0.037, respectively. These results do not establish reliable use of the
+x/y pairing under this input representation.
+
+The larger model does not give a uniform improvement: its selected-prompt
+interpolation NMSE is worse than 135M, but raw interpolation MSE is better (0.1249
+versus 0.1632). Its expected exact-target hit rate at K=8 is about 44.35%, near the
+uniform-sampling reference of 44.73%; that alone does not make its error distribution
+better. The full report includes both metrics, per-function target probabilities,
+controls and outside-catalog results. Five functions per group do not support a
+broad model-ranking or scaling claim.
+
+The repeated-failure gate passed on development targets `x`, `2*x` and `sin(x*x)`.
+Both rank-one magnitudes worsened development regret; the less harmful candidate
+(0.1% of the chosen tensor's Frobenius norm) was explicitly rejected before evaluation.
+It was evaluated only as a diagnostic. On representable evaluation functions it
+raised mean target probability from 0.0901 to 0.1197, while worsening expected
+interpolation NMSE from 1.161 to 13.44. Random controls stayed near baseline;
+restored no-edit results matched baseline exactly. The original tensor was restored
+and its hash checked. No edit was retained or deployed.
+
+This is evidence for distinguishing output-distribution steering from useful search
+improvement, not evidence of newly acquired symbolic capability. The immediate
+bottleneck remains elicitation/numerical conditioning and the finite catalog; this
+particular edit did not repair it. Stronger claims require broader tasks and
+independent evaluation, not further selection on these results.
+
+Recorded matrix inference time sums to about 22.2 minutes; intervention inference
+is recorded separately. Timings are shared-CPU observations. Model weights and
+materialized tensor-checkpoint binaries are omitted from Git; pinned download
+identities, all edit vectors/seeds/parameters, manifests, history, and rollback
+hashes are included. Rerunning the command materializes the tensor states locally.
+
+Verification: **39 automated tests pass**, including uncached probability-reference
+checks for GPT-2 and Llama, exact best-of-K checks, observation-control invariants,
+a real tiny-Llama edit/rollback integration, and the complete offline phase/resume
+workflow. Ordinary tests never download pretrained weights.
+
 ## Tests and phases
 
 | Test | Implementation | What it measures |
@@ -28,8 +84,11 @@ uv run symbolic-wsp diagnostics --small-model runs/models/135m --large-model run
 For an already prepared CPU-only environment, use `uv run --no-sync` to retain its
 CPU PyTorch installation. Individual phases use `--phase development`,
 `--phase intervention --resume` and `--phase evaluation --resume`. The same config
-is mandatory on resume; completed matrix rows are reused. Use a new output for a
-new protocol. Model downloads are explicit and excluded from ordinary unit tests.
+is mandatory on resume; completed matrix rows are reused. Source changes within
+a phase are rejected rather than mixing computations from different revisions. An incomplete
+intervention aborts rather than appending duplicate trials; start a fresh study
+output to repeat that phase. A completed intervention is reused. Use a new output for a
+new protocol. Use one writer per output directory; do not run phases concurrently. Model downloads are explicit and excluded from ordinary unit tests.
 
 ## Data separation and prompt selection
 
@@ -130,3 +189,35 @@ code baseline here is exhaustive numerical catalog selection; it is not an agent
 asked to invent a new program. Broader code-versus-weight studies and isolated
 final testing remain future work. No successful result alone establishes creation
 of a new capability or excludes access repair/program insertion.
+
+
+## Reporting and verification
+
+After all phases complete, the report and audit commands are:
+
+```bash
+uv run --no-sync python scripts/report_diagnostics.py runs/diagnostics --output runs/diagnostics/RESULTS.md
+uv run --no-sync python scripts/verify_diagnostics.py runs/diagnostics --small-tokenizer runs/models/135m --large-tokenizer runs/models/360m
+```
+
+The audit reconstructs every leaf probability from recorded per-prefix masked log
+probabilities, recomputes expected selected-candidate metrics, rerenders prompts,
+checks development selections, and checks no-edit/rollback and source provenance.
+The first-token bias control operates on the measured root distribution; it is not
+a general deployment hook or an exported weight change.
+
+
+## Source provenance
+
+The recorded study identifies the actual execution revision for each phase and
+archives the corresponding source by hash. A small reporting edge-case fix for
+empty subgroups was made between intervention and evaluation; it does not affect
+the configured groups or model probabilities, and the phase sources are separately
+preserved. No historical performance record was rewritten.
+
+Future runs automatically save per-phase environments, source snapshots and
+provenance. Their metadata now includes the Git revision and worktree state; source
+snapshots remain authoritative when a checkout is dirty or Git is unavailable.
+The source-change guard protects interrupted phase resumes. These provenance
+improvements were verified with the offline workflow test; they do not constitute
+a rerun of the pretrained-model measurements.

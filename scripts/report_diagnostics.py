@@ -77,6 +77,23 @@ def main():
             )
     lines += [
         "",
+        "## Raw MSE under the development-selected prompt",
+        "",
+        "MSE complements NMSE; target variance differs across functions and domains.",
+        "",
+        "| Model | Control | Expected interpolation MSE | Expected extrapolation MSE |",
+        "| --- | --- | ---: | ---: |",
+    ]
+    for model, choice in choices.items():
+        for control in cfg["observation_controls"]:
+            m = summary[
+                f"{model}/evaluation/{choice['variant']}/{control}/representable"
+            ]
+            lines.append(
+                f"| {model} | {control} | {m['expected_interpolation_mse']:.6g} | {m['expected_extrapolation_mse']:.6g} |"
+            )
+    lines += [
+        "",
         "## Per-function target probability",
         "",
         "| Target | 135M minimal | 135M catalog | 135M few-shot | 360M minimal | 360M catalog | 360M few-shot |",
@@ -192,6 +209,20 @@ def main():
             lines.append(
                 f"| {condition} | {m['expected_interpolation_nmse']:.6g} | {m['expected_extrapolation_nmse']:.6g} | {m['target_probability']:.6g} | {m['expected_observation_regret']:.6g} |"
             )
+        candidates = json.loads(
+            (args.results / "intervention/candidates.json").read_text()
+        )
+        lines += [
+            "",
+            "### All development edit proposals",
+            "",
+            "| Candidate | Relative tensor norm | Development regret |",
+            "| --- | ---: | ---: |",
+        ]
+        for candidate in candidates:
+            lines.append(
+                f"| {candidate['name']} | {candidate['relative']:.3%} | {candidate['development_regret']:.6g} |"
+            )
         rollback = json.loads((args.results / "intervention/rollback.json").read_text())
         lines += [
             "",
@@ -237,6 +268,27 @@ def main():
                     )
                 )
     write(args.results / "observation-sensitivity.json", sensitivity)
+    lines += [
+        "",
+        "## Distribution sensitivity under the selected prompt",
+        "",
+        "Representable functions only. Positive target-probability differences favor correct data; negative error differences favor correct data. Total variation measures change, not improvement.",
+        "",
+        "| Model | Correct versus | Mean total variation | Mean target-probability difference | Mean interpolation-NMSE difference |",
+        "| --- | --- | ---: | ---: | ---: |",
+    ]
+    for model in choices:
+        for control in ("shuffled", "other_function", "absent"):
+            subset = [
+                r
+                for r in sensitivity
+                if r["model"] == model
+                and r["control"] == control
+                and r["target"] in cfg["inventory"]
+            ]
+            lines.append(
+                f"| {model} | {control} | {np.mean([r['total_variation'] for r in subset]):.6g} | {np.mean([r['target_probability_delta'] for r in subset]):.6g} | {np.mean([r['interpolation_nmse_delta'] for r in subset]):.6g} |"
+            )
     lines += [
         "",
         "## Accounting and limits",

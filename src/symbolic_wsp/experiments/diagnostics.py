@@ -272,6 +272,61 @@ def choose_prompt(rows, variants):
     )
 
 
+def source_fingerprint():
+    return {
+        str(p): hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in Path("src/symbolic_wsp").rglob("*.py")
+    }
+
+
+def save_phase_environment(output, cfg, phase, seconds):
+    import subprocess
+
+    sources = source_fingerprint()
+    if json.loads((output / (phase + "-source.json")).read_text()) != sources:
+        raise ValueError(
+            "source changed during execution; raw records retained but phase not finalized"
+        )
+    archive = output / "source-snapshots"
+    archive.mkdir(exist_ok=True)
+    for path, sha in sources.items():
+        target = archive / (sha + ".py")
+        if not target.exists():
+            target.write_bytes(Path(path).read_bytes())
+    try:
+        commit = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL
+        ).strip()
+        dirty = bool(
+            subprocess.check_output(
+                ["git", "status", "--porcelain"], text=True, stderr=subprocess.DEVNULL
+            ).strip()
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        commit = None
+        dirty = None
+    environment = dict(
+        platform=platform.platform(),
+        python=platform.python_version(),
+        packages={
+            n: importlib.metadata.version(n)
+            for n in ("torch", "transformers", "numpy", "safetensors", "tokenizers")
+        },
+        threads=cfg["threads"],
+        peak_rss_mib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024,
+        invocation_seconds=seconds,
+        source_sha256=sources,
+        git_commit=commit,
+        worktree_dirty=dirty,
+    )
+    write(output / "environment.json", environment)
+    write(output / ("environment-" + phase + ".json"), environment)
+    path = output / "provenance.json"
+    provenance = json.loads(path.read_text()) if path.exists() else {}
+    provenance[phase] = commit
+    write(path, provenance)
+
+
 def run_study(cfg, model_paths, output, phase="all", resume=False):
     if phase == "all":
         result = None
@@ -287,6 +342,11 @@ def run_study(cfg, model_paths, output, phase="all", resume=False):
         (output / "config.json").read_text()
     ) != cfg:
         raise ValueError("resume configuration mismatch")
+    phase_source = output / (phase + "-source.json")
+    sources = source_fingerprint()
+    if phase_source.exists() and json.loads(phase_source.read_text()) != sources:
+        raise ValueError("source changed since phase started; use a fresh study output")
+    write(phase_source, sources)
     write(output / "config.json", cfg)
     variants, demos = prompt_variants(cfg)
     write(output / "prompts.json", variants)
@@ -350,24 +410,7 @@ def run_study(cfg, model_paths, output, phase="all", resume=False):
         gc.collect()
     rows = list(existing.values())
     write(output / "summary.json", summarize(rows))
-    write(
-        output / "environment.json",
-        dict(
-            platform=platform.platform(),
-            python=platform.python_version(),
-            packages={
-                n: importlib.metadata.version(n)
-                for n in ("torch", "transformers", "numpy", "safetensors", "tokenizers")
-            },
-            threads=cfg["threads"],
-            peak_rss_mib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024,
-            invocation_seconds=time.perf_counter() - started,
-            source_sha256={
-                str(p): hashlib.sha256(p.read_bytes()).hexdigest()
-                for p in Path("src/symbolic_wsp").rglob("*.py")
-            },
-        ),
-    )
+    save_phase_environment(output, cfg, phase, time.perf_counter() - started)
     return dict(
         output=str(output),
         rows=len(rows),

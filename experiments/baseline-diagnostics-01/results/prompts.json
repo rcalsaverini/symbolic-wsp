@@ -1,0 +1,29 @@
+{
+  "minimal": {
+    "version": 1,
+    "system_message": "You are a helpful AI assistant named SmolLM, trained by Hugging Face",
+    "user_template": "Find an expression in x for these observations. Return only the expression.\n{observations}",
+    "no_observations": "No numerical observations are provided.",
+    "significant_digits": 6,
+    "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "add_generation_prompt": true
+  },
+  "catalog": {
+    "version": 1,
+    "system_message": "You are a helpful AI assistant named SmolLM, trained by Hugging Face",
+    "user_template": "Allowed expressions: [\"x\", \"0\", \"1\", \"2*x\", \"x+1\", \"x*x\", \"x*x+1\", \"sin(x)\", \"cos(x)\", \"exp(x)\", \"1/(x*x+1)\", \"x/(x*x+1)\", \"sin(x)+x\", \"sin(x*x)\"]\nChoose the expression that best fits the paired x/y observations. Return only that expression.\n{observations}",
+    "no_observations": "No numerical observations are provided.",
+    "significant_digits": 6,
+    "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "add_generation_prompt": true
+  },
+  "few_shot": {
+    "version": 1,
+    "system_message": "You are a helpful AI assistant named SmolLM, trained by Hugging Face",
+    "user_template": "Example observations: {\"x\":[-0.282158,0.582577,-0.828826,-0.218942,0.6698,0.586309,0.355575,-0.250515],\"y\":[0.717842,1.58258,0.171174,0.781058,1.6698,1.58631,1.35557,0.749485]}\nExpression: x+1\n\nExample observations: {\"x\":[-0.678514,-0.0651044,-0.118656,0.607513,0.872478,-0.670205,0.0407721,0.544298],\"y\":[-1.30615,-0.130163,-0.237034,1.17834,1.6384,-1.29135,0.0815329,1.06212]}\nExpression: sin(x)+x\n\nAllowed expressions: [\"x\", \"0\", \"1\", \"2*x\", \"x+1\", \"x*x\", \"x*x+1\", \"sin(x)\", \"cos(x)\", \"exp(x)\", \"1/(x*x+1)\", \"x/(x*x+1)\", \"sin(x)+x\", \"sin(x*x)\"]\nChoose the expression that best fits the paired x/y observations. Return only that expression.\n{observations}",
+    "no_observations": "No numerical observations are provided.",
+    "significant_digits": 6,
+    "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "add_generation_prompt": true
+  }
+}

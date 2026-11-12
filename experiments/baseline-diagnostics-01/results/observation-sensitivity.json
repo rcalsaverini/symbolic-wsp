@@ -1,0 +1,482 @@
+[
+  {
+    "model": "135m",
+    "target": "sin(x)",
+    "control": "shuffled",
+    "total_variation": 0.051544697663085885,
+    "target_probability_delta": -0.01961210536037694,
+    "interpolation_nmse_delta": 0.02805251635383195
+  },
+  {
+    "model": "135m",
+    "target": "sin(x)",
+    "control": "other_function",
+    "total_variation": 0.11322492416366459,
+    "target_probability_delta": -0.02970148135181469,
+    "interpolation_nmse_delta": 0.044249713039843146
+  },
+  {
+    "model": "135m",
+    "target": "sin(x)",
+    "control": "absent",
+    "total_variation": 0.05623540916462329,
+    "target_probability_delta": 0.008394823988536526,
+    "interpolation_nmse_delta": 0.0035606942777274136
+  },
+  {
+    "model": "135m",
+    "target": "cos(x)",
+    "control": "shuffled",
+    "total_variation": 0.009318857978523696,
+    "target_probability_delta": -0.0006847213667456106,
+    "interpolation_nmse_delta": -0.01706545326740505
+  },
+  {
+    "model": "135m",
+    "target": "cos(x)",
+    "control": "other_function",
+    "total_variation": 0.06032994725945495,
+    "target_probability_delta": -0.00592586525144456,
+    "interpolation_nmse_delta": -0.2231158770947136
+  },
+  {
+    "model": "135m",
+    "target": "cos(x)",
+    "control": "absent",
+    "total_variation": 0.11147120963028323,
+    "target_probability_delta": 0.005921188587213759,
+    "interpolation_nmse_delta": 0.1081822118868715
+  },
+  {
+    "model": "135m",
+    "target": "x*x",
+    "control": "shuffled",
+    "total_variation": 0.02385823768977483,
+    "target_probability_delta": 3.108874609516685e-08,
+    "interpolation_nmse_delta": 0.027084584259819966
+  },
+  {
+    "model": "135m",
+    "target": "x*x",
+    "control": "other_function",
+    "total_variation": 0.1623122766324957,
+    "target_probability_delta": 1.9502908737296845e-07,
+    "interpolation_nmse_delta": -0.23427709405323638
+  },
+  {
+    "model": "135m",
+    "target": "x*x",
+    "control": "absent",
+    "total_variation": 0.17829398438036526,
+    "target_probability_delta": -0.011333133346616541,
+    "interpolation_nmse_delta": 0.29529962330478643
+  },
+  {
+    "model": "135m",
+    "target": "exp(x)",
+    "control": "shuffled",
+    "total_variation": 0.05201871961428971,
+    "target_probability_delta": -0.00032253213982209915,
+    "interpolation_nmse_delta": 0.03600652052847342
+  },
+  {
+    "model": "135m",
+    "target": "exp(x)",
+    "control": "other_function",
+    "total_variation": 0.12658945463034102,
+    "target_probability_delta": 0.00034860079876289753,
+    "interpolation_nmse_delta": 0.10748291827660328
+  },
+  {
+    "model": "135m",
+    "target": "exp(x)",
+    "control": "absent",
+    "total_variation": 0.078601942234215,
+    "target_probability_delta": -0.007125093683751353,
+    "interpolation_nmse_delta": -0.15782260044223828
+  },
+  {
+    "model": "135m",
+    "target": "1/(x*x+1)",
+    "control": "shuffled",
+    "total_variation": 0.010232352914132362,
+    "target_probability_delta": 0.003788812306914302,
+    "interpolation_nmse_delta": -0.03301977534262429
+  },
+  {
+    "model": "135m",
+    "target": "1/(x*x+1)",
+    "control": "other_function",
+    "total_variation": 0.056541941022411675,
+    "target_probability_delta": -0.05451608695879723,
+    "interpolation_nmse_delta": 0.09048916930018452
+  },
+  {
+    "model": "135m",
+    "target": "1/(x*x+1)",
+    "control": "absent",
+    "total_variation": 0.1579647167564275,
+    "target_probability_delta": -0.11271632281701538,
+    "interpolation_nmse_delta": 0.18737608947710283
+  },
+  {
+    "model": "135m",
+    "target": "sin(2*x)",
+    "control": "shuffled",
+    "total_variation": 0.012604913495029676,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.0026892743014256815
+  },
+  {
+    "model": "135m",
+    "target": "sin(2*x)",
+    "control": "other_function",
+    "total_variation": 0.036567279466727755,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.008900260081549372
+  },
+  {
+    "model": "135m",
+    "target": "sin(2*x)",
+    "control": "absent",
+    "total_variation": 0.08707654511381344,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.009728596403672324
+  },
+  {
+    "model": "135m",
+    "target": "cos(2*x)",
+    "control": "shuffled",
+    "total_variation": 0.023034758495162275,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.015998100610783883
+  },
+  {
+    "model": "135m",
+    "target": "cos(2*x)",
+    "control": "other_function",
+    "total_variation": 0.06244045352454659,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.034344792524546364
+  },
+  {
+    "model": "135m",
+    "target": "cos(2*x)",
+    "control": "absent",
+    "total_variation": 0.14392187129631948,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.050058533406462935
+  },
+  {
+    "model": "135m",
+    "target": "2*x*x",
+    "control": "shuffled",
+    "total_variation": 0.023107155312573964,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.028166734578729313
+  },
+  {
+    "model": "135m",
+    "target": "2*x*x",
+    "control": "other_function",
+    "total_variation": 0.04947213085513594,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.005287457586636846
+  },
+  {
+    "model": "135m",
+    "target": "2*x*x",
+    "control": "absent",
+    "total_variation": 0.10812279049511715,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.14217414695581
+  },
+  {
+    "model": "135m",
+    "target": "exp(x/2)",
+    "control": "shuffled",
+    "total_variation": 0.04634040811604733,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.024424044324200533
+  },
+  {
+    "model": "135m",
+    "target": "exp(x/2)",
+    "control": "other_function",
+    "total_variation": 0.09428761962330334,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.08900382614982849
+  },
+  {
+    "model": "135m",
+    "target": "exp(x/2)",
+    "control": "absent",
+    "total_variation": 0.09001336592251102,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.11387763493615077
+  },
+  {
+    "model": "135m",
+    "target": "1/(x*x+2)",
+    "control": "shuffled",
+    "total_variation": 0.011309833445857427,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.11171056113941802
+  },
+  {
+    "model": "135m",
+    "target": "1/(x*x+2)",
+    "control": "other_function",
+    "total_variation": 0.021323053192063676,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.09823853919548498
+  },
+  {
+    "model": "135m",
+    "target": "1/(x*x+2)",
+    "control": "absent",
+    "total_variation": 0.12893752201698197,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.8136524753847851
+  },
+  {
+    "model": "360m",
+    "target": "sin(x)",
+    "control": "shuffled",
+    "total_variation": 0.06594151624669148,
+    "target_probability_delta": 0.010321696527034047,
+    "interpolation_nmse_delta": -0.013691328655965174
+  },
+  {
+    "model": "360m",
+    "target": "sin(x)",
+    "control": "other_function",
+    "total_variation": 0.09052035727003556,
+    "target_probability_delta": 0.04239871594171392,
+    "interpolation_nmse_delta": -0.14942127852007897
+  },
+  {
+    "model": "360m",
+    "target": "sin(x)",
+    "control": "absent",
+    "total_variation": 0.3278050071645879,
+    "target_probability_delta": -0.018367048980576034,
+    "interpolation_nmse_delta": 0.25693110374899875
+  },
+  {
+    "model": "360m",
+    "target": "cos(x)",
+    "control": "shuffled",
+    "total_variation": 0.013909952290103167,
+    "target_probability_delta": -0.0007650339955464769,
+    "interpolation_nmse_delta": 0.151656050752619
+  },
+  {
+    "model": "360m",
+    "target": "cos(x)",
+    "control": "other_function",
+    "total_variation": 0.0703934381737545,
+    "target_probability_delta": 0.00042099893691487436,
+    "interpolation_nmse_delta": 0.5898635667288765
+  },
+  {
+    "model": "360m",
+    "target": "cos(x)",
+    "control": "absent",
+    "total_variation": 0.41857307462622434,
+    "target_probability_delta": 0.0020362199148910402,
+    "interpolation_nmse_delta": 6.073894359450684
+  },
+  {
+    "model": "360m",
+    "target": "x*x",
+    "control": "shuffled",
+    "total_variation": 0.019456143449021277,
+    "target_probability_delta": 0.00677285079803458,
+    "interpolation_nmse_delta": -0.012209156554616296
+  },
+  {
+    "model": "360m",
+    "target": "x*x",
+    "control": "other_function",
+    "total_variation": 0.16710615749955476,
+    "target_probability_delta": -0.0274912878267084,
+    "interpolation_nmse_delta": -0.01713946449006748
+  },
+  {
+    "model": "360m",
+    "target": "x*x",
+    "control": "absent",
+    "total_variation": 0.40721903587353325,
+    "target_probability_delta": 0.1983909021406937,
+    "interpolation_nmse_delta": -2.10491789056624
+  },
+  {
+    "model": "360m",
+    "target": "exp(x)",
+    "control": "shuffled",
+    "total_variation": 0.0471379699071987,
+    "target_probability_delta": 0.002237740565203865,
+    "interpolation_nmse_delta": -0.0050479784758969415
+  },
+  {
+    "model": "360m",
+    "target": "exp(x)",
+    "control": "other_function",
+    "total_variation": 0.18070679510686277,
+    "target_probability_delta": -0.004609519610241114,
+    "interpolation_nmse_delta": -0.042842149887324654
+  },
+  {
+    "model": "360m",
+    "target": "exp(x)",
+    "control": "absent",
+    "total_variation": 0.407444144219564,
+    "target_probability_delta": -0.0011433870385168868,
+    "interpolation_nmse_delta": -0.025258634942427083
+  },
+  {
+    "model": "360m",
+    "target": "1/(x*x+1)",
+    "control": "shuffled",
+    "total_variation": 0.037748534580717454,
+    "target_probability_delta": -0.0003935408182768711,
+    "interpolation_nmse_delta": -0.09761246480549346
+  },
+  {
+    "model": "360m",
+    "target": "1/(x*x+1)",
+    "control": "other_function",
+    "total_variation": 0.04447153416242992,
+    "target_probability_delta": 0.0023652256780164437,
+    "interpolation_nmse_delta": 0.00858662627201312
+  },
+  {
+    "model": "360m",
+    "target": "1/(x*x+1)",
+    "control": "absent",
+    "total_variation": 0.3898476266821193,
+    "target_probability_delta": -0.10995861330825724,
+    "interpolation_nmse_delta": 5.206240240459646
+  },
+  {
+    "model": "360m",
+    "target": "sin(2*x)",
+    "control": "shuffled",
+    "total_variation": 0.027407274149292685,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.004043297363748366
+  },
+  {
+    "model": "360m",
+    "target": "sin(2*x)",
+    "control": "other_function",
+    "total_variation": 0.038943191871750556,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.0680744952694608
+  },
+  {
+    "model": "360m",
+    "target": "sin(2*x)",
+    "control": "absent",
+    "total_variation": 0.3524290583582187,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.31581540488950277
+  },
+  {
+    "model": "360m",
+    "target": "cos(2*x)",
+    "control": "shuffled",
+    "total_variation": 0.01724610660984979,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.0639274269732093
+  },
+  {
+    "model": "360m",
+    "target": "cos(2*x)",
+    "control": "other_function",
+    "total_variation": 0.10282767012254615,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.08439007673132881
+  },
+  {
+    "model": "360m",
+    "target": "cos(2*x)",
+    "control": "absent",
+    "total_variation": 0.37480208055008,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 1.8829523488220183
+  },
+  {
+    "model": "360m",
+    "target": "2*x*x",
+    "control": "shuffled",
+    "total_variation": 0.010910698289594125,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.0004671099829004488
+  },
+  {
+    "model": "360m",
+    "target": "2*x*x",
+    "control": "other_function",
+    "total_variation": 0.06868321911092004,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.01370878719952695
+  },
+  {
+    "model": "360m",
+    "target": "2*x*x",
+    "control": "absent",
+    "total_variation": 0.3700506591188752,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.5289465886861665
+  },
+  {
+    "model": "360m",
+    "target": "exp(x/2)",
+    "control": "shuffled",
+    "total_variation": 0.056807807635398146,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": 0.08144410031504701
+  },
+  {
+    "model": "360m",
+    "target": "exp(x/2)",
+    "control": "other_function",
+    "total_variation": 0.11139735795502378,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.24773531898321677
+  },
+  {
+    "model": "360m",
+    "target": "exp(x/2)",
+    "control": "absent",
+    "total_variation": 0.42031995245316384,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.6052694365751952
+  },
+  {
+    "model": "360m",
+    "target": "1/(x*x+2)",
+    "control": "shuffled",
+    "total_variation": 0.007443646462928109,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -0.11421729614156106
+  },
+  {
+    "model": "360m",
+    "target": "1/(x*x+2)",
+    "control": "other_function",
+    "total_variation": 0.10238956645551102,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -1.3837512936210103
+  },
+  {
+    "model": "360m",
+    "target": "1/(x*x+2)",
+    "control": "absent",
+    "total_variation": 0.3594103118002969,
+    "target_probability_delta": 0.0,
+    "interpolation_nmse_delta": -12.767590919590567
+  }
+]
